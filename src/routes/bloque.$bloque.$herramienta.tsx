@@ -19,7 +19,11 @@ function HerramientaPage() {
   }, [status, navigate]);
 
   if (status === "loading") {
-    return <div className="mx-auto max-w-6xl px-6 py-24 text-center text-muted-foreground">Cargando…</div>;
+    return (
+      <div className="mx-auto max-w-6xl px-6 py-24 text-center text-muted-foreground">
+        Cargando…
+      </div>
+    );
   }
 
   if (!data) {
@@ -49,13 +53,21 @@ function HerramientaPage() {
       </Link>
 
       <header className="mt-8">
-        <div className="flex items-center gap-2">
-          <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
-            {data.tipo}
-          </span>
+        <div className="flex flex-wrap items-center gap-4">
+          <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl border bg-white p-2 shadow-sm">
+            <img src={data.logo} alt={data.nombre} className="h-full w-full object-contain" />
+          </div>
+          <div className="min-w-0">
+            <div className="flex items-center gap-2">
+              <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-primary">
+                {data.tipo}
+              </span>
+              <span className="text-xs font-medium text-muted-foreground">{data.empresa}</span>
+            </div>
+            <h1 className="mt-2 text-4xl font-bold tracking-tight md:text-5xl">{data.nombre}</h1>
+          </div>
         </div>
-        <h1 className="mt-4 text-4xl font-bold tracking-tight md:text-5xl">{data.nombre}</h1>
-        <p className="mt-3 font-serif text-xl text-muted-foreground">{data.tagline}</p>
+        <p className="mt-4 font-serif text-xl text-muted-foreground">{data.tagline}</p>
 
         {data.enlace && (
           <a

@@ -3,12 +3,17 @@
 Sitio web (en español) con contenido sobre herramientas digitales para la dirección de
 proyectos, agrupado en tres bloques:
 
-1. **Ideación** — herramientas para generar, estructurar y validar ideas.
-2. **Conocimiento** — herramientas para capturar, documentar y compartir conocimiento.
-3. **Ejecución** — herramientas para planificar, organizar y hacer seguimiento del trabajo.
+1. **Ideación / Descubrimiento** — 10 herramientas para generar, estructurar y validar ideas
+   (Miro, Mural, FigJam, Figma, Adobe Express, Canva, Crunchbase, Dealroom, Hey Marvin, Notion AI).
+2. **Definición / Conocimiento** — 6 herramientas para capturar, documentar y compartir
+   conocimiento (Confluence, Microsoft Loop, Notion, Coda, Obsidian, Dovetail).
+3. **Despliegue / Ejecución** — 19 herramientas para planificar, organizar y hacer seguimiento
+   del trabajo (Trello, Asana, monday.com, Jira, ClickUp, Azure DevOps, Slack, Lark, Zoom,
+   Google Meet, Microsoft Teams, Spinach.io, Atlassian Rovo, monday AI, ClickUp Brain,
+   Miro AI, Planisware, ProChain, GitHub Copilot).
 
-Dentro de cada bloque hay "carpetas" (fichas) que explican cada aplicación de gestión de
-proyectos: qué es, cómo encaja en cada fase, casos de uso, ventajas, limitaciones y consejos.
+Cada herramienta tiene una **ficha** con logo oficial, empresa, tagline, características
+principales y su aportación a la gestión de proyectos. Los logos viven en `public/logos/`.
 
 Este proyecto fue construido con [Lovable](https://lovable.dev).
 

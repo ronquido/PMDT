@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Lightbulb, BookOpen, Rocket, FolderGit2, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { useAccess } from "@/lib/access-context";
 import { AccessGate } from "@/components/AccessGate";
 import { BLOQUES } from "@/lib/content";
@@ -17,12 +17,6 @@ export const Route = createFileRoute("/")({
   }),
   component: Index,
 });
-
-const ICONS: Record<string, typeof Lightbulb> = {
-  ideacion: Lightbulb,
-  conocimiento: BookOpen,
-  ejecucion: Rocket,
-};
 
 function formatDate(iso: string): string {
   try {
@@ -67,29 +61,33 @@ function Index() {
       </section>
 
       <section className="pb-8 grid gap-6 md:grid-cols-3">
-        {BLOQUES.map((bloque, i) => {
-          const Icon = ICONS[bloque.slug] ?? FolderGit2;
-          return (
-            <Link
-              key={bloque.slug}
-              to={`/bloque/${bloque.slug}`}
-              className="group relative flex flex-col overflow-hidden rounded-2xl border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
-            >
-              <span className="absolute right-6 top-6 text-6xl font-extrabold text-muted-foreground/10 transition-colors group-hover:text-foreground/10">
-                {String(i + 1).padStart(2, "0")}
+        {BLOQUES.map((bloque, i) => (
+          <Link
+            key={bloque.slug}
+            to={`/bloque/${bloque.slug}`}
+            className="group relative flex flex-col overflow-hidden rounded-2xl border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+          >
+            <span className="absolute right-6 top-6 text-6xl font-extrabold text-muted-foreground/10 transition-colors group-hover:text-foreground/10">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <div className="flex items-center gap-2.5">
+              <img
+                src={bloque.herramientas[0]?.logo}
+                alt={bloque.herramientas[0]?.nombre}
+                className="h-8 w-8 rounded-lg border bg-white object-contain p-1"
+              />
+              <span className="text-xs font-medium text-muted-foreground">
+                {bloque.herramientas.length} herramientas
               </span>
-              <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                {Icon && <Icon className="h-6 w-6" />}
-              </div>
-              <h2 className="text-2xl font-semibold tracking-tight">{bloque.nombre}</h2>
-              <p className="mt-2 flex-1 text-sm text-muted-foreground">{bloque.descripcion}</p>
-              <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary">
-                Explorar
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-              </div>
-            </Link>
-          );
-        })}
+            </div>
+            <h2 className="mt-5 text-2xl font-semibold tracking-tight">{bloque.nombre}</h2>
+            <p className="mt-2 flex-1 text-sm text-muted-foreground">{bloque.descripcion}</p>
+            <div className="mt-6 flex items-center gap-2 text-sm font-semibold text-primary">
+              Explorar
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </div>
+          </Link>
+        ))}
       </section>
 
       <section className="py-12">
@@ -104,7 +102,10 @@ function Index() {
               "Sesión iniciada."
             )}
           </p>
-          <button onClick={logout} className="text-sm font-medium text-muted-foreground hover:text-foreground">
+          <button
+            onClick={logout}
+            className="text-sm font-medium text-muted-foreground hover:text-foreground"
+          >
             Cerrar sesión
           </button>
         </div>

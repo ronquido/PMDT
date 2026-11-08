@@ -6,11 +6,13 @@ export type Seccion = {
 export type Herramienta = {
   slug: string;
   nombre: string;
+  empresa: string;
   tagline: string;
-  resumen: string;
   tipo: string;
   enlace: string;
+  logo: string;
   etiquetas: string[];
+  resumen: string;
   secciones: Seccion[];
 };
 
@@ -25,124 +27,99 @@ export type Bloque = {
 export const BLOQUES: Bloque[] = [
   {
     slug: "ideacion",
-    nombre: "Ideación",
+    nombre: "Ideación / Descubrimiento",
     titulo: "De la chispa al concepto compartido",
     descripcion:
-      "Herramientas para generar, estructurar y validar ideas: lluvia de ideas, mapas mentales, pizarras colaborativas y ejes visuales que convierten las conversaciones en conceptos accionables.",
+      "Herramientas para generar, estructurar y validar ideas: lluvia de ideas, mapas, pizarras colaborativas, investigación de mercado y descubrimiento de cliente.",
     herramientas: [
       {
         slug: "miro",
         nombre: "Miro",
+        empresa: "Miro (antes RealtimeBoard)",
         tagline: "La pizarra colaborativa infinita por excelencia.",
-        resumen:
-          "Miro es una pizarra digital infinita pensada para que los equipos trabajen juntos de forma visual y en tiempo real. Durante la ideación es, probablemente, la herramienta más usada del mercado porque reúne lluvia de ideas, diagramas y votación en un único lienzo.",
         tipo: "Pizarra colaborativa",
         enlace: "https://miro.com",
-        etiquetas: ["Pizarra", "Tiempo real", "Retrospectivas", "Mapas mentales", "Plantillas"],
+        logo: "/logos/miro.png",
+        etiquetas: ["Pizarra", "Tiempo real", "IA", "Plantillas", "Retrospectivas"],
+        resumen:
+          "Miro es una pizarra digital infinita ('AI Innovation Workspace') pensada para que los equipos trabajen juntos de forma visual y en tiempo real. Es la herramienta de colaboración visual más usada en la fase de ideación, con más de 100 millones de usuarios y 250.000 empresas.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Miro es una plataforma de colaboración visual basada en un lienzo infinito de zoom. Puedes arrastrar notas adhesivas, conectores, marcos, imágenes y documentos mientras el resto del equipo mira y edita simultáneamente desde cualquier dispositivo.",
-              "Nació como RealtimeBoard y hoy es el estándar de facto para pizarras en remoto: se integra con Zoom, Slack, Microsoft Teams y prácticamente cualquier herramienta de trabajo.",
+              "Pizarra inteligente multijugador sobre un lienzo infinito, con colaboración en tiempo real y capacidad de mezclar notas adhesivas, conectores, frames, documentos y diagramas.",
+              "Miro AI genera diagramas, wireframes, prototipos, mapas mentales, flujos y tableros; además incluye formatos integrados (Docs, Tables, Slides, Diagrams, Kanban, timelines).",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ideación",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "Durante la ideación, Miro aporta un espacio único donde conviven el brainstorming, la agrupación de ideas, la votación y la documentación. Un flujo típico consiste en abrir una plantilla de lluvia de ideas, fijar un temporizador, dejar que cada persona aporte sus post-its y, después, agruparlos y votar con gomets (stickers).",
-              "El resultado es un mapa visual que se puede exportar o convertir directamente en una matriz de priorización o en tareas dentro de otra herramienta.",
+              "En la fase de ideación y discovery convierte la investigación en dirección compartida sobre un mismo lienzo, revisándola con el equipo antes de planificar.",
+              "Sus plantillas de roadmapping, customer journey y workshop aceleran la alineación (según el sitio, ~50% menos tiempo de planificación) y agilizan el camino de la idea al plan.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Brainstorming y brainwriting sincrónico o asíncrono, donde la asincronía (mundo async) es especialmente valiosa para equipos de husos horarios distintos.",
-              "Mapas mentales y diagramas de flujo rápidos durante la exploración de soluciones.",
-              "Retrospectivas ágiles (bien, mejorar, hacer) tras una iteración.",
-              "Priorización con matrices (impacto/esfuerzo), votación con stickers y tomas de decisión grupales.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Curva de aprendizaje muy corta: cualquier persona puede empezar a usar el lienzo en minutos.",
-              "Gran ecosistema de plantillas oficiales y comunitarias para todo tipo de dinámicas.",
-              "Integraciones con las herramientas del día a día (Slack, Teams, Zoom, Jira, Confluence).",
-              "El lienzo infinito permite conectar ideas grandes con nivel de detalle creciente.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "Sin moderación, un lienzo abierto puede convertirse en caos visual; necesita un facilitador que lo estructure.",
-              "La versión gratuita limita el número de tableros privados y los diagramas complejos pueden volverse pesados cuando hay cientos de objetos.",
+              "Más de 250 apps e integraciones (Slack, Teams, Zoom, Jira, Confluence) y más de 6.000 plantillas.",
+              "Formatos integrados: docs, tablas, slides, diagramas, kanban y líneas de tiempo.",
+              "Miro AI: generación de diagramas, mapas mentales, wireframes y tableros.",
+              "Casos de uso para I+D: research synthesis, planificación, roadmapping y customer journey mapping.",
+              "Seguridad empresarial: ISO 27001, SOC 2, GDPR e ISO 42001 (IA).",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Define siempre un objetivo y un facilitador antes de lanzar la sesión.",
-              "Usa los marcos (frames) para ordenar la pizarra por fases y evitar el scroll infinito desorientador.",
-              "Termina cada sesión con una síntesis visible: qué decidimos y cuáles son los siguientes pasos.",
+              "Define objetivo y facilitador antes de lanzar cualquier sesión.",
+              "Usa los marcos (frames) para ordenar la pizarra por fases.",
+              "Termina cada sesión con una síntesis visible de decisiones y siguientes pasos.",
             ],
           },
         ],
       },
       {
-        slug: "xmind",
-        nombre: "XMind",
-        tagline: "Mapas mentales para estructurar el pensamiento.",
+        slug: "mural",
+        nombre: "Mural",
+        empresa: "Mural (Tactivos, Inc.; incluye LUMA Institute)",
+        tagline: "Sincroniza, acelera, destaca.",
+        tipo: "Pizarra colaborativa",
+        enlace: "https://www.mural.co",
+        logo: "/logos/mural.png",
+        etiquetas: ["Pizarra", "Workshops", "IA", "Innovación", "Strategy"],
         resumen:
-          "XMind es una herramienta especializada en mapas mentales. Mientras que una pizarra sirve para abrir el abanico de ideas, XMind ayuda a cerrarlo: convierte la dispersión inicial en una estructura jerárquica clara con ramas, prioridades y relaciones.",
-        tipo: "Mapas mentales",
-        enlace: "https://xmind.app",
-        etiquetas: ["Mapas mentales", "Estructura", "Jerarquía", "Diagramas"],
+          "Mural es un espacio de trabajo visual con IA ('visual AI platform') para equipos, con plantillas basadas en metodologías de expertos como el sistema LUMA de innovación. Es referencia en talleres de ideación, planning estratégico y product discovery.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "XMind es un software de mapas mentales disponible en escritorio, móvil y web. Permite crear diagramas radiales partiendo de una idea central y ramificando subtemas, con notas, iconos, marcadores y estilos visuales predefinidos.",
-              "Su enfoque es muy distinto al de una pizarra: en lugar de explorar en horizontal, fuerza un orden jerárquico que resulta ideal para entender la estructura de un problema.",
+              "Workspace de canvas infinito compartido con colaboración en tiempo real y una biblioteca de plantillas y metodologías de expertos (brainstorming, agile, ventas, strategic planning).",
+              "Incluye Mural AI para acelerar el brainstorming, analizar feedback y sugerir 'siguientes pasos'.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ideación",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "La ideación tiene dos momentos: divergir (generar muchas ideas) y convergir (seleccionar y ordenar). XMind es la herramienta perfecta para la convergencia: después de un brainstorming en Miro, se puede volcar lo aprendido en un mapa mental que muestre de un vistazo las alternativas, sus relaciones y sus dependencias.",
-              "También es muy útil antes de la ideación, para abrir el espacio mental: descomponer el problema en partes para atacar cada una por separado.",
+              "En discovery e ideación sirve para facilitar workshops, mapear stakeholders e influencias y co-crear hallazgos de cliente de forma visual e interactiva.",
+              "Mantiene la estrategia conectada con la ejecución, de la idea al plan, añadiendo IA para sintetizar feedback y priorizar próximos pasos.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Descomposición de un problema o reto en subproblemas manejables (por ejemplo, un árbol de objetivos).",
-              "Mapas de comparación de alternativas de solución con notas y pesos.",
-              "Planificación de la estructura de un documento, entregable o presentación.",
-              "Toma de notas visuales de una sesión de lluvia de ideas.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Fuerza la estructura y la jerarquía, lo que ayuda a que el equipo hable sobre prioridades.",
-              "Exportación a múltiples formatos (PNG, PDF, Markdown, texto plano) para arrastrar el resultado a otras herramientas.",
-              "Rápido: crear un mapa mental bien ordenado cuesta minutos.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "La colaboración en tiempo real es limitada comparada con una pizarra; es más una herramienta individual o de síntesis.",
-              "No es adecuada para flujos muy visuales o jerárquicos no radiales; sus diagramas de espina de pescado o árbol cubren la mayoría de casos.",
+              "Canvas infinito con colaboración en tiempo real y solución dedicada a Research & Development.",
+              "Mural AI: brainstorming, análisis de feedback y sugerencias de 'next best steps'.",
+              "Plantillas y metodologías expertas (sistema LUMA de innovación, agile, customer journey, process mapping).",
+              "Integraciones con el stack tecnológico y asociación destacada con Microsoft (Teams, Surface Hub).",
+              "Seguridad enterprise y apps; métricas publicadas: hasta 50% más eficiencia y 800 h de reuniones ahorradas al año.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Usa los marcadores de prioridad (P1, P2, P3) en cada rama para que el mapa sirva también como planificación.",
-              "Limita la profundidad: si superas cuatro niveles de subramas, probablemente necesitas dividir el mapa.",
-              "Una sola idea por rama mantiene el mapa legible.",
+              "Usa plantillas de metodología probada en lugar de lienzos en blanco.",
+              "Aprovecha Mural AI para sintetizar el feedback de cada sesión.",
+              "Cierra cada workshop con un plan de acción visible y responsables.",
             ],
           },
         ],
@@ -150,164 +127,363 @@ export const BLOQUES: Bloque[] = [
       {
         slug: "figjam",
         nombre: "FigJam",
+        empresa: "Figma, Inc.",
         tagline: "Pizarras ligeras que nacen pegadas al diseño.",
-        resumen:
-          "FigJam es la pizarra colaborativa de la familia Figma. Si el equipo ya trabaja con Figma para diseño, FigJam ofrece la transición más natural entre la ideación y el prototipado, porque los elementos de la pizarra se conectan directamente con los proyectos de diseño.",
         tipo: "Pizarra colaborativa",
         enlace: "https://www.figma.com/figjam/",
-        etiquetas: ["Pizarra", "Diseño", "Sticky notes", "Diagramas", "Figma"],
+        logo: "/logos/figjam.png",
+        etiquetas: ["Pizarra", "Diseño", "Diagramas", "Plantillas", "Figma"],
+        resumen:
+          "FigJam es la pizarra colaborativa de Figma para brainstorm, diagramado y toma de decisiones. Si el equipo ya trabaja con Figma, ofrece la transición más natural entre la ideación y el prototipado.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "FigJam es la herramienta de pizarra blanca de Figma: un lienzo colaborativo con plumas, notas adhesivas, formas, stencils (plantillas de diagramas) y una estética cuidada y ligera.",
-              "Está pensada para la fase de descubrimiento y lluvia de ideas dentro del ecosistema Figma, de forma que lo que nace en la pizarra puede saltar a un archivo de diseño con un único clic.",
+              "Pizarra digital en línea del ecosistema Figma con colaboración en tiempo real, diagramming, herramientas de engagement (stickers, emojis, votaciones y widgets) y más de 300 plantillas listas.",
+              "Se incluye con todas las licencias de Figma, conectando la ideación con el diseño y el roadmap.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ideación",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "FigJam brilla en equipos de producto y diseño que necesitan pasar rápido de la conversación al diseño. La lluvia de ideas clásica con post-its, la votación con emojis y los diagramas rápidos funcionan muy fluidos, y el salto a Figma para prototipar es inmediato.",
+              "Ofrece una plantilla de 'project kickoff' para definir objetivos, responsabilidades y plazos desde el primer día.",
+              "Facilita canvas de customer journey, roadmap reviews, retrospectivas y stand-ups para alinear al equipo y convertir ideas en acciones.",
+              "Al estar integrado con Figma, el salto de la pizarra al prototipo y al roadmap es inmediato.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Sesiones de idea a diseño: de una hipótesis en post-its a un flujo de pantallas.",
-              "Customer journey y service blueprint dibujados en directo con el equipo.",
-              "Votaciones rápidas con emoticonos y reacciones en tiempo real.",
-              "Talleres con la comunidad FigJam que comparte plantillas listas para usar.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Integración total con Figma: lo que se dibuja en FigJam puede pasar al canvas de diseño.",
-              "Tiene widgets y plantillas muy logradas para talleres y dinámicas ágiles.",
-              "Interfaz limpia y ágil que invita a participar, incluso a personas no técnicas.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "El lienzo es menos potente para diagramas técnicos grandes que herramientas específicas.",
-              "La promoción separada de Figma hace que, fuera de equipos de diseño, muchos prefieran Miro.",
+              "Colaboración en tiempo real: brainstorm, diagramado y decisiones compartidas.",
+              "Diagramming con formas y conectores ajustados a rejilla (flujos, procesos, sistemas).",
+              "Flujos ágiles: stand-ups y retrospectivas para mantener los sprints en marcha.",
+              "Estrategia y planificación: planning de proyectos y roadmapping con roadmap reviews.",
+              "Usado por equipos de Atlassian, GitHub, Microsoft, Slack, Airbnb y Asana.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Aprovecha el modo jam con temporizador integrado para mantener el ritmo de la sesión.",
-              "Conecta los resultados con un archivo Figma de seguimiento para no perder lo decidido.",
+              "Usa las plantillas de kickoff y roadmap review para estructurar las sesiones.",
+              "Conecta los resultados con un archivo Figma de seguimiento.",
+              "Aprovecha votaciones y stickers para tomar decisiones grupales rápidas.",
             ],
           },
         ],
       },
       {
-        slug: "stormboard",
-        nombre: "Stormboard",
-        tagline: "Tormentas de ideas organizadas por columnas.",
+        slug: "figma",
+        nombre: "Figma",
+        empresa: "Figma, Inc.",
+        tagline: "El lienzo creativo full-stack con IA nativa.",
+        tipo: "Plataforma de diseño y prototipado",
+        enlace: "https://www.figma.com",
+        logo: "/logos/figma.png",
+        etiquetas: ["Diseño", "Prototipado", "IA", "Dev Mode", "Multiplayer"],
         resumen:
-          "Stormboard es una herramienta de brainstorming digital que organiza la lluvia de ideas en tableros tipo kanban de ideas. Cada idea es una tarjeta que se puede votar, agrupar, convertir en tarea y discutir, lo que la hace ideal para sesiones con un flujo claro de entradas, análisis y decisiones.",
-        tipo: "Brainstorming",
-        enlace: "https://stormboard.com",
-        etiquetas: ["Brainstorming", "Tarjetas", "Votación", "Decisiones"],
+          "Figma es la plataforma de diseño, prototipado y desarrollo de producto colaborativa con IA nativa. Permite convertir ideas en wireframes y prototipos navegables para validar con usuarios y stakeholders muy rápido.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Stormboard es una pizarra de ideas digital donde los participantes escriben sus aportaciones como tarjetas (sticky notes) en columnas predeterminadas. Al ser una cuadrícula, combina lo visual de una pizarra con el orden de una tabla.",
-              "Cada tarjeta admite discusión, comentarios, votos, adjuntos y la conversión directa en tareas dentro de herramientas de gestión como Jira o Asana.",
+              "Diseño y prototipado en un solo lugar con edición multijugador en tiempo real (multiplayer) y Dev Mode para traducir diseños a código.",
+              "Suite Figma: FigJam (whiteboard), Figma Slides, Figma Draw, Figma Sites, Figma Motion y Figma Buzz, con agentes de IA (Figma Make prompt-to-code y Figma Weave).",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ideación",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "Su estructura por columnas encaja con procesos de ideación guiados: una columna para generar ideas, otra para agruparlas por temas, otra para votarlas y otra para convertirlas en acciones. La herramienta acompaña todo el ciclo de vida de la idea sin salir del tablero.",
+              "En discovery e ideación convierte ideas en wireframes y prototipos navegables para validar con usuarios y stakeholders sin esperar a desarrollo.",
+              "Mantiene diseño, código e IA en el mismo contexto; sus 'product manager solutions' cubren planificación y roadmaps.",
+              "Agentes de IA aceleran feedback, documentación de design systems y generación de alternativas de diseño, acortando el ciclo idea→producto.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Talleres estructurados de generación de ideas con un moderador que fija tiempos por columna.",
-              "Detección de ideas comunes votando tarjetas duplicadas.",
-              "Reuniones de priorización donde cada tarjeta acaba siendo una tarea en el gestor de proyectos.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "El paso de idea a tarea es directo y no se pierde información entre sesiones.",
-              "Muy adecuada para equipos que quieren órdenes de trabajo claras, no un lienzo libre.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "Menos flexible que un lienzo infinito para dibujos y diagramas.",
-              "Si el equipo prefiere libertad total, una pizarra tipo Miro puede resultar más natural.",
+              "Diseño y prototipado colaborativo en tiempo real.",
+              "Dev Mode: traducción de diseños a código y contexto para ingeniería.",
+              "IA integrada: agentes, prompt-to-code (Make) y flujos de IA para imagen, vídeo y audio.",
+              "Comunidad y ecosistema: plugins, widgets, UI kits y plantillas.",
+              "Marcha: el 95% del Fortune 500 usa Figma (dato de su web).",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Predefine las columnas del tablero antes de la sesión para que la dinámica no se desvíe.",
-              "Fija un número máximo de votos por persona para forzar priorización.",
+              "Planifica un pequeño prototipo navegable en cada idea para validar hipótesis.",
+              "Usa FigJam para la pizarra y Figma para el prototipo sin cambiar de ecosistema.",
             ],
           },
         ],
       },
       {
-        slug: "whimsical",
-        nombre: "Whimsical",
-        tagline: "Mapas, diagramas y prototipos en un santiamén.",
+        slug: "adobe-express",
+        nombre: "Adobe Express",
+        empresa: "Adobe Inc.",
+        tagline: "La app rápida y fácil para crear cualquier cosa.",
+        tipo: "Diseño y creación de contenido",
+        enlace: "https://www.adobe.com/express/",
+        logo: "/logos/adobe-express.png",
+        etiquetas: ["Diseño", "IA generativa", "Firefly", "Plantillas", "Marca"],
         resumen:
-          "Whimsical es una herramienta de diagramas y mapas conceptuales que destaca por su velocidad y su estética limpia. Combina mapas mentales, diagramas de flujo, wireframes y tableros en una sola aplicación pensada para la fase temprana de cualquier proyecto.",
-        tipo: "Diagramas y mapas",
-        enlace: "https://whimsical.com",
-        etiquetas: ["Diagramas", "Mapas mentales", "Wireframes", "Flujos"],
+          "Adobe Express es la herramienta de diseño y creación de contenido (imagen, vídeo y social) con IA generativa Firefly comercialmente segura. Es ideal para producir mockups y material de comunicación durante la ideación sin depender de un estudio.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Whimsical ofrece un creador de diagramas rápido y minimalista con modo de dibujo a mano alzada (el llamado infinity mode), mapas mentales, diagramas de flujo, calendarios, tableros y simples wireframes.",
-              "Su propuesta es la de 'antes de las herramientas pesadas': cubrir las necesidades de comunicación visual de la fase de descubrimiento sin complejidad.",
+              "App rápida de diseño con plantillas profesionales para posts sociales, flyers, vídeos, presentaciones y assets de marketing, con edición en un solo clic (quitar fondo, resize, recortar).",
+              "IA generativa Adobe Firefly: imagen, vídeo, plantillas y 'Gen Voice', con AI Assistant para crear y editar por prompt.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ideación",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "Es perfecta para pasar de la idea a la visualización en minutos. Un mapa mental para desplegar opciones, un diagrama de flujo para entender el recorrido del usuario o un wireframe rápido para dar forma a una pantalla, todo en una sola aplicación.",
+              "En la fase de ideación/discovery genera mockups, conceptos visuales y material de presentación rápidamente y respetando la marca.",
+              "Permite comunicar el proyecto a stakeholders con flyers, posts y vídeos sin esperar a diseño; la IA acelera la creación de assets frente a lanzamientos tempranos.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Mapas mentales para la descomposición de retos de negocio.",
-              "Diagramas de flujo de procesos antes de la ejecución técnica.",
-              "Wireframes descartables para validar la forma de una pantalla con el usuario.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Rapidez absoluta: en dos clics tienes un diagrama presentable.",
-              "Interfaz minimalista que reduce el ruido y la fricción.",
-              "Buenas bases de plantillas para procesos estándar (recorridos, historias de usuario).",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "La colaboración en tiempo real es algo más limitada que en grandes pizarras.",
-              "La versión gratuita tiene límite de elementos en cada archivo.",
+              "Plantillas profesionales y Brand Kits (tipografías y colores de marca aplicables con un clic).",
+              "IA generativa Adobe Firefly, comercialmente segura, y AI Assistant en beta.",
+              "Edición de un clic: fondo, resize, recorte, conversión de formatos y editor de vídeo.",
+              "Colaboración en tiempo real y control de marca a escala (planes Teams/Empresa).",
+              "Integración con Adobe Creative Cloud y apps de Adobe.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Usa el modo espejo o copiar enlace para compartir borradores sin sesión.",
-              "Combínalo con una herramienta de ejecución: lo que aquí se dibuja, allí se ejecuta.",
+              "Configura los Brand Kits del proyecto para que todo el material salga en marca.",
+              "Usa el AI Assistant para iterar conceptos visuales rápidamente en la fase de exploración.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "canva",
+        nombre: "Canva",
+        empresa: "Canva Pty Ltd (Australia)",
+        tagline: "Empoderando al mundo para diseñar.",
+        tipo: "Plataforma de diseño gráfico (Visual Suite)",
+        enlace: "https://www.canva.com",
+        logo: "/logos/canva.png",
+        etiquetas: ["Diseño", "Visual Suite", "Magic Studio", "Plantillas", "Presentaciones"],
+        resumen:
+          "Canva es una plataforma de diseño gráfico online con IA generativa (Magic Studio), usada por más de 220 millones de personas al mes. Combina presentaciones, docs, whiteboards y edición de vídeo en un solo lugar.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Visual Suite: Docs, Sheets, Whiteboards, Presentaciones, Vídeo, edición de fotos, sitios web y editor PDF, con colaboración en tiempo real.",
+              "Canva AI / Magic Studio: Magic Write (escritura IA), Magic Resize, Magic Design, generadores de imagen, vídeo y voz, Translate y Magic Insights.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "En discovery produce material visual de comunicación (presentaciones, infografías, prototipos visuales) al instante y manteniéndolo en marca para alinear stakeholders.",
+              "Sus whiteboards y docs habilitan talleres de ideación colaborativos y Magic Insights permite analizar feedback con IA para fundamentar decisiones.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Más de 220M usuarios activos mensuales y 30.000M de diseños creados (datos publicados).",
+              "Magic Studio: Magic Write, Magic Resize, Magic Design, generadores IA de imagen, vídeo, logo y voz.",
+              "Visual Suite completa: Docs, Sheets, Whiteboards, Presentaciones y Vídeo.",
+              "Gestión de marca: kits de marca, plantillas de equipo y permisos.",
+              "Planes para negocio/empresa con SSO y funciones de administración.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Crea un kit de marca del proyecto para uniformar todo el material.",
+              "Usa Magic Insights para convertir datos de feedback en infografías legibles.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "crunchbase",
+        nombre: "Crunchbase",
+        empresa: "Crunchbase Inc.",
+        tagline: "Antes de ser noticia, está en Crunchbase.",
+        tipo: "Inteligencia de empresas privadas",
+        enlace: "https://www.crunchbase.com",
+        logo: "/logos/crunchbase.png",
+        etiquetas: ["Market intelligence", "IA predictiva", "Funding", "Competencia"],
+        resumen:
+          "Crunchbase es una base de datos e inteligencia predictiva de empresas privadas, ideal para la fase de ideación: mapear el landscape competitivo, detectar quién crece o levanta financiación y validar el mercado.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Base propietaria de empresas, personas, financiación (funding), adquisiciones, IPOs y eventos con modelos de IA predictiva.",
+              "Crédito a 39.000 millones de señales live del mercado privado, con predicciones de financiación, crecimiento, adquisición, IPO y cierres.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "En ideación/discovery aporta investigación de mercado y competitiva: mapear el landscape de empresas y benchmarkear competidores antes de decidir.",
+              "Acelera la due diligence y permite tomar decisiones build/buy/partner con datos verificados y predicciones de IA.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "39.000M de señales live y 30M+ de actualizaciones verificadas al año.",
+              "Modelos de IA predictiva: financiación, crecimiento, adquisición, IPO, cierres y layoffs.",
+              "Productos: Crunchbase Pro, Business, API, MCP (para agentes de IA) y licencias de datos.",
+              "Búsqueda avanzada y filtros por sector, geografía, etapa y equipo; alertas y señales tempranas.",
+              "Según su web, predice el 84% de las rondas reales; usado por Mixpanel, OECD, Bayer y monday.com.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Configura alertas en tu sector para detectar movimientos antes que la competencia.",
+              "Usa el MCP para llevar datos de mercado directo a tus agentes de IA.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "dealroom",
+        nombre: "Dealroom",
+        empresa: "Dealroom.co",
+        tagline: "Inteligencia para ecosistemas tech.",
+        tipo: "Inteligencia de startups y ecosistemas",
+        enlace: "https://dealroom.co",
+        logo: "/logos/dealroom.png",
+        etiquetas: ["Startups", "Ecosystems", "Funding", "Tendencias", "API/MCP"],
+        resumen:
+          "Dealroom es la fuente de referencia sobre startups, founders y financiación a nivel global. Permite identificar empresas prometedoras, seguir tendencias sectoriales y validar oportunidades con datos de ecosistemas tech.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Plataforma de business intelligence de ecosistemas tech: perfiles de empresa con valoraciones, cap tables, revenue estimado, runway y personas clave.",
+              "Rankings en vivo de hot sectors, hot startups y hot locations, más deep-dives por sector y API/MCP para alimentar agentes de IA.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "En discovery e ideación permite identificar empresas y startups prometedoras y mapear el paisaje competitivo.",
+              "Sigue tendencias sectoriales y de inversión para validar oportunidades y tomar decisiones de build/buy/partner con datos.",
+              "Su API/MCP entrega datos directamente a agentes de IA y flujos de trabajo.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Rankings en vivo: hot sectors (IA agents, robótica, climate tech), hot startups y hot locations.",
+              "Deep-dives por sector con tamaño, unicorns y subsegmentos en crecimiento.",
+              "Datos de ecosistemas: valor empresarial, VC por ciudad, unicorns y métricas de talento.",
+              "API REST y servidor MCP (con Slack, HubSpot, Salesforce, Zapier, Cursor).",
+              "Estudios y reportes por país (ej. Spanish Tech ecosystem) y newsfeed en directo.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Explora los deep-dives por sector para escanear el mercado de una idea en minutos.",
+              "Conecta el MCP con tus agentes de investigación para automatizar el sourcing.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "hey-marvin",
+        nombre: "Hey Marvin",
+        empresa: "Marvin (Equafin Corp)",
+        tagline: "La plataforma de insights de cliente con IA a escala.",
+        tipo: "Insights de cliente / UX research con IA",
+        enlace: "https://www.heymarvin.com",
+        logo: "/logos/hey-marvin.png",
+        etiquetas: ["UX research", "IA", "Entrevistas", "Insights", "Customer"],
+        resumen:
+          "Hey Marvin es una plataforma de insights de clientes con IA generativa: centraliza entrevistas, encuestas y llamadas, y permite preguntar a una IA que responde con citas sobre toda la investigación. Nació para descubrimiento de producto a gran velocidad.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Knowledge Hub que sincroniza entrevistas, encuestas, llamadas e investigación, con análisis de temas, sentimiento y patrones de métodos mixtos.",
+              "Ask AI responde con citas originales sobre todos los datos; entrevistas moderadas por IA a escala y AI notetaker en sesiones live.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "En ideación/discovery ejecuta investigación de cliente a gran velocidad (entrevistas IA, feedback de beta) y la centraliza en un repositorio consultable.",
+              "Ayuda al PM a validar el roadmap buscando en toda la investigación y a convertir aprendizajes de cliente en decisiones.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Ask AI: respuestas citadas sobre todos los datos de investigación.",
+              "Entrevistas moderadas por IA a escala (cientos a la vez) y AI notetaker en vivo.",
+              "Marvin Live Intercept: entrevistador de IA voz-a-voz integrado en productos digitales.",
+              "Analysis Studio: temas, sentimiento y patrones mixtos (cualitativo + cuantitativo).",
+              "30+ integraciones y MCP; certificaciones SOC 2, ISO 27001, ISO 42001 y GDPR.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Centraliza toda la investigación de discovery en el Knowledge Hub antes de validar ideas.",
+              "Pregunta a Ask AI por cada idea antes de llevarla al roadmap.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "notion-ai",
+        nombre: "Notion AI",
+        empresa: "Notion Labs, Inc.",
+        tagline: "Tu equipo de IA disponible 24/7.",
+        tipo: "IA generativa y agentes sobre Notion",
+        enlace: "https://www.notion.com/product/ai",
+        logo: "/logos/notion-ai.png",
+        etiquetas: ["IA", "Agentes", "Búsqueda", "Meeting notes", "Docs"],
+        resumen:
+          "Notion AI es la funcionalidad de IA integrada en el workspace de Notion: agentes que ejecutan tareas multi-paso, búsqueda empresarial con citas y notas de reuniones automáticas. Convierte los docs y bases de datos en un sistema donde la IA prioriza y resume.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Notion Agent ejecuta tareas complejas multi-paso (crear y editar páginas y bases de datos) usando el contexto del workspace, apps conectadas y web.",
+              "Custom Agents automatizan trabajo recurrente 24/7 (responder en Slack, enrutar tareas, actualizar proyectos) y Enterprise Search busca en apps conectadas con respuestas citadas.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "En ideación/discovery permite 'pasar de brainstorm a roadmap' con IA directamente sobre la base de conocimiento.",
+              "Triage de feedback de producto, automatización de reportes semanales y notas de reuniones con acciones para la fase de alineación.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Notion Agent: tareas multi-paso con contexto del workspace.",
+              "Custom Agents 24/7 y Enterprise Search con citas (Slack, Google Drive, GitHub).",
+              "AI Meeting Notes: transcripción, resumen y follow-ups automáticos.",
+              "Research Mode para informes profundos y autofill de bases de datos.",
+              "Model-agnóstico, paneles de ROI y controles de gobernanza y permisos.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Crea agentes personalizados para el triage diario de feedback.",
+              "Usa las notas de reunión para poblarlas automáticamente en la base de conocimiento.",
             ],
           },
         ],
@@ -316,126 +492,189 @@ export const BLOQUES: Bloque[] = [
   },
   {
     slug: "conocimiento",
-    nombre: "Conocimiento",
+    nombre: "Definición / Conocimiento",
     titulo: "Ordena lo que el equipo aprende",
     descripcion:
-      "Herramientas para capturar, documentar y compartir el conocimiento del equipo: wikis, bases de conocimiento, notas y espacios colaborativos que evitan que el saber quede en conversaciones sueltas.",
+      "Herramientas para capturar, documentar, estructurar y compartir el conocimiento del proyecto: wikis, documentos inteligentes, notas enlazadas e insights de usuario.",
     herramientas: [
       {
-        slug: "notion",
-        nombre: "Notion",
-        tagline: "El espacio de trabajo todo-en-uno.",
+        slug: "confluence",
+        nombre: "Confluence",
+        empresa: "Atlassian",
+        tagline: "Empieza con contexto, no desde cero.",
+        tipo: "Wiki corporativa / espacio de conocimiento",
+        enlace: "https://www.atlassian.com/software/confluence",
+        logo: "/logos/confluence.png",
+        etiquetas: ["Wiki", "Documentación", "Jira", "Bases de datos", "Rovo IA"],
         resumen:
-          "Notion combina notas, documentación, bases de datos, wikis y gestión de tareas en una única herramienta flexible. Gracias a sus bases de datos relacionales es la opción favorita de muchos equipos para construir un centro de conocimiento vivo sin comprar varias aplicaciones.",
-        tipo: "Notas y wiki",
-        enlace: "https://www.notion.so",
-        etiquetas: ["Wiki", "Bases de datos", "Notas", "Documentación"],
+          "Confluence es la plataforma de documentación y wiki de Atlassian. Piensa para equipos que ya trabajan con Jira, integra la documentación del proyecto con las incidencias y los flujos de trabajo. Es la fuente de verdad del equipo que captura, estructura y difunde conocimiento.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Notion es una aplicación que permite construir páginas con bloques de distintos tipos: texto, tablas, bases de datos, kanban, calendarios, fórmulas o rollups. Es un lienzo flexible donde cada equipo define su propia estructura.",
-              "Esta flexibilidad la ha convertido en el cubre-todo más popular: sirve como escritorio personal, wiki de empresa, gestor de tareas, base de datos de clientes o espacio de cursos, a menudo a la vez.",
+              "Wiki empresarial donde los equipos redactan páginas estructuradas en espacios, con macros, tablas, adjuntos e historial de versiones completo.",
+              "Live docs, bases de datos y whiteboards integrados; con Rovo AI responde con citas sobre todos los documentos y comentarios.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de conocimiento",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "El conocimiento necesita de tres prácticas: capturarlo, estructurarlo y difundirlo. Notion aborda las tres: se captura rápido con una página, se estructura con bases de datos (por ejemplo, por área, autor o estado) y se difunde compartiendo enlaces o exportando.",
-              "Su verdadera potencia está en las bases de datos: una misma lista puede verse como tabla, kanban, calendario o galería, lo que hace que la información se adapte al contexto, no al revés.",
+              "Captura el conocimiento del proyecto en un único espacio estructurado (páginas, bases de datos, whiteboards) con plantillas específicas de gestión de proyectos.",
+              "Al enlazarse con Jira convierte el conocimiento en contexto accionable; la IA Rovo resume y descubre decisiones sin búsquedas manuales.",
+              "Es la fuente de verdad para difundir estados, actas y lecciones aprendidas a todo el equipo.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Centro de conocimiento del proyecto: decisiones, glosarios, preguntas frecuentes y aprendizajes.",
-              "Base de datos de herramientas y herramientas evaluadas en la fase de ideación.",
-              "Portal de onboarding para recién llegados con guías y enlaces.",
-              "Acta de reuniones con acción y responsable enlazados a tareas.",
+              "Páginas y Live docs con versionado; bases de datos y whiteboards integrados.",
+              "Plantillas por área: gestión de proyectos, producto, software, marketing, RRHH y finanzas.",
+              "Teamwork Graph conecta Jira, Loom y más herramientas para dar contexto.",
+              "Integraciones con Jira, Figma, GitHub, Google Drive, Microsoft Teams y Loom.",
+              "Automatización para detectar páginas obsoletas y single source of truth (Reddit, Dropbox, Lumen).",
             ],
           },
           {
-            titulo: "Ventajas",
+            titulo: "Consejos",
             parrafos: [
-              "Flexibilidad casi ilimitada para modelar la información como quieras.",
-              "Ecosistema amplio de plantillas de la comunidad.",
-              "Apis e integraciones con la mayoría de herramientas del ecosistema.",
-              "Buen balance precio/funcionalidad para equipos pequeños.",
+              "Estructura espacios por proyecto y equipo, con plantillas por tipo de documento.",
+              "Designa un 'bibliotecario' de conocimiento que valide la calidad de las páginas clave.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "microsoft-loop",
+        nombre: "Microsoft Loop",
+        empresa: "Microsoft (Microsoft 365)",
+        tagline: "Piensa, planifica y crea juntos.",
+        tipo: "Documento inteligente colaborativo",
+        enlace: "https://loop.microsoft.com",
+        logo: "/logos/microsoft-loop.png",
+        etiquetas: ["Docs", "Componentes", "Microsoft 365", "Copilot", "Planificación"],
+        resumen:
+          "Microsoft Loop es la app colaborativa de Microsoft 365: páginas de proyecto con componentes (Ideas, Proyectos, Decisiones) que se sincronizan en tiempo real entre todas las apps. Ideal cuando el equipo vive en el ecosistema Microsoft.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Páginas de proyecto con componentes (Ideas, Proyectos, Decisiones, Notas) insertables con un clic y sincronizados en tiempo real entre Word, Teams, Outlook y otras apps de Microsoft 365.",
+              "Copilot en Loop ayuda a co-crear, ponerse al día y mantenerse sincronizado.",
             ],
           },
           {
-            titulo: "Limitaciones",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "La flexibilidad tiene un coste: sin convenciones puede convertirse en un caos de páginas.",
-              "El editor de texto es menos potente que el de herramientas específicas tipo Google Docs.",
-              "Permisos granulares avanzados (por fila o metadatos) son más complicados que en wikis tradicionales.",
+              "Captura el conocimiento del proyecto en páginas modulares (Ideas, Decisiones, Proyectos) que se reutilizan como componentes en Word, Teams y Outlook, evitando información aislada.",
+              "El PM estructura el trabajo con plantillas, y Copilot resume y difunde el estado del proyecto dentro del propio ecosistema Microsoft.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Componentes de Loop sincronizados en tiempo real entre todas las apps de Microsoft 365.",
+              "Copilot en Loop para co-creación, resúmenes y sincronización.",
+              "Búsqueda automática que sugiere archivos y documentos relevantes al crear un workspace.",
+              "Plantillas de página para contexto, notas y toma de decisiones.",
+              "Menciones, fechas y emojis en línea; notificaciones configurables.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Crea páginas de Decisión para documentar acuerdos y reutiliza los componentes en Teams.",
+              "Aprovecha las plantillas de proyecto para arrancar cada iniciativa con estructura.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "notion",
+        nombre: "Notion",
+        empresa: "Notion Labs, Inc.",
+        tagline: "El espacio de trabajo con IA que trabaja para ti.",
+        tipo: "Espacio de trabajo todo-en-uno",
+        enlace: "https://www.notion.com",
+        logo: "/logos/notion.png",
+        etiquetas: ["Wiki", "Bases de datos", "Notas", "Docs", "Agentes"],
+        resumen:
+          "Notion combina notas, documentación, bases de datos, wikis y gestión de tareas en un único sistema flexible, reconocido como 'system of record'. Es el favorito de muchos equipos para construir un centro de conocimiento vivo sin comprar varias apps.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Espacio de trabajo que combina documentos, bases de datos relacionales y wikis, con bloques de distintos tipos y vistas (tabla, kanban, calendario, galería).",
+              "Notion AI integrado responde con citas, y los agentes (Custom Agents) automatizan tareas y flujos 24/7.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Centraliza la captura de conocimiento en el mismo sistema donde viven el wiki, las bases de datos y las tareas del proyecto.",
+              "El PM estructura la documentación con plantillas y bases de datos relacionadas; la búsqueda con IA responde con citas para recuperar decisiones pasadas.",
+              "Sus agentes automatizan reportes y seguimientos, difundiendo conocimiento de forma proactiva.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Sistema de registro central: docs + bases de datos + wikis.",
+              "Notion AI: respuestas citadas, captura y búsqueda de conocimiento.",
+              "Custom Agents que automatizan tareas y flujos 24/7.",
+              "Base de conocimiento reconocida (G2's #1 durante 3 años).",
+              "Cientos de integraciones, plan enterprise con permisos y SSO.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
               "Define un índice maestro (hub) que enlace las áreas principales del conocimiento.",
-              "Establece responsables por página o por base de datos para mantenerla al día.",
-              "Usa plantillas por tipo de documento (lección aprendida, acta, guía) para mantener la coherencia.",
+              "Usa plantillas por tipo de documento para mantener coherencia.",
             ],
           },
         ],
       },
       {
-        slug: "confluence",
-        nombre: "Confluence",
-        tagline: "La wiki corporativa de referencia en entornos Jira.",
+        slug: "coda",
+        nombre: "Coda",
+        empresa: "Coda / Superhuman (anteriormente Coda Inc.)",
+        tagline: "Tu espacio de trabajo todo-en-uno donde las tablas hablan entre sí.",
+        tipo: "Documento conversacional / workspace",
+        enlace: "https://coda.io",
+        logo: "/logos/coda.png",
+        etiquetas: ["Docs", "Fórmulas", "Automatización", "Packs", "IA"],
         resumen:
-          "Confluence es la plataforma de documentación y wiki de Atlassian. Pensada para equipos que ya trabajan con Jira, integra la documentación del proyecto con las incidencias y los flujos de trabajo, convirtiéndose en la fuente de verdad del equipo técnico y de producto.",
-        tipo: "Wiki corporativa",
-        enlace: "https://www.atlassian.com/software/confluence",
-        etiquetas: ["Wiki", "Documentación", "Jira", "Corporativo"],
+          "Coda combina documento y aplicación: tablas que se conectan entre sí, fórmulas, botones y automatizaciones para construir miniapps sin código. El PM puede convertir un doc en un tracker de estado con IA integrada.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Confluence es una wiki empresarial donde los equipos redactan páginas estructuradas en espacios (espacios de proyecto, de equipo o de producto). Cada página admite macros, tablas, adjuntos y un historial de versiones completo.",
-              "Es el repositorio documental clásico de las empresas que ya usan el ecosistema Atlassian: el plan, las actas, las decisiones y las especificaciones viven en Confluence mientras las tareas viven en Jira.",
+              "Documentos interactivos con tablas que 'hablan' entre sí, writeups, hubs de equipo y trackers construibles con fórmulas, botones y automatizaciones.",
+              "Coda AI añade chat, asistente de creación, columna AI y resúmenes a escala; packs con más de 600 integraciones.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de conocimiento",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "Confluence ofrece lo que los equipos corporativos necesitan para que el conocimiento deje de ser tribal: espacios con permisos claros, plantillas de buenas prácticas, aprobaciones, versionado y búsqueda potente en toda la organización.",
-              "La integración con Jira permite enlazar una especificación con las incidencias que la implementan, cerrando el círculo entre lo que se sabe y lo que se hace.",
+              "Convierte la documentación en aplicaciones vivas: un mismo doc puede contener el plan, un tracker de estado y una automatización que envía actualizaciones a Slack.",
+              "El PM captura conocimiento con plantillas (decisión doc, team hub, roadmap) y la IA lo estructura en tablas o lo resume para difundirlo.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Documentación de requisitos y especificaciones técnicas de un proyecto.",
-              "Bases de conocimiento de producto y de soporte.",
-              "Actas de comités de seguimiento con acciones enlazadas a Jira.",
-              "Normativa interna, guías de estilo y procesos de empresa.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Estructura de espacios y permisos muy adecuada para organizaciones grandes.",
-              "Integración nativa con Jira y todo el ecosistema Atlassian.",
-              "Plantillas oficiales de calidad y sistema de aprobación de contenidos.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "Editor de páginas menos fluido y moderno que Notion.",
-              "Curva de aprendizaje para administración (espacios, permisos, macros).",
-              "Coste por usuario que penaliza a equipos pequeños.",
+              "Tablas conectadas y fórmulas/lógica para crear miniapps sin código (CRM, presupuestos, roadmaps).",
+              "Coda AI: chat, asistente de creación, columna AI y resúmenes a escala.",
+              "Packs: 600+ integraciones (Google Calendar, Slack, Figma, Jira).",
+              "Galería y plantillas por rol (planificación/OKRs, reuniones, gestión de proyectos).",
+              "Precios basados en uso, sin límites por asiento.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Estructura los espacios por proyecto/producto y por equipo transversal.",
-              "Designa un 'bibliotecario' de conocimiento que valide la calidad de las páginas clave.",
-              "Aprovecha los enlaces entre páginas para no duplicar información entre espacios.",
+              "Convierte el doc de proyecto en una app con un tracker y un botón de automatización.",
+              "Usa la columna AI para resumir estados semanales desde los datos.",
             ],
           },
         ],
@@ -443,118 +682,90 @@ export const BLOQUES: Bloque[] = [
       {
         slug: "obsidian",
         nombre: "Obsidian",
-        tagline: "Conocimiento enlazado con Markdown local.",
-        resumen:
-          "Obsidian es una aplicación de notas basada en archivos Markdown locales donde cada nota puede enlazarse con otras, creando una red de conocimiento (grafo). Es la herramienta predilecta de quienes piensan que el conocimiento se construye enlazando y reutilizando ideas.",
-        tipo: "Notas enlazadas",
+        empresa: "Obsidian (Dynalist Inc.)",
+        tagline: "Aguza tu pensamiento. Tu conocimiento debe durar.",
+        tipo: "Notas enlazadas en Markdown",
         enlace: "https://obsidian.md",
-        etiquetas: ["Markdown", "Grafo", "Notas", "Privacidad"],
+        logo: "/logos/obsidian.png",
+        etiquetas: ["Markdown", "Grafo", "Notas", "Local", "Wikilinks"],
+        resumen:
+          "Obsidian es la aplicación de notas en Markdown plano local donde cada nota se enlaza con otras, creando una red de conocimiento visualizable. Con más de 200.000 usuarios, es la herramienta predilecta del 'building a second brain' y del conocimiento de investigación.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Obsidian es un editor de notas en Markdown plano almacenadas en tu propio disco. Su característica estrella es el grafo: cada nota puede enlazar otras mediante [[wikilinks]], y esas conexiones dibujan un mapa visual de cómo se relacionan las ideas.",
-              "Todo el conocimiento vive en archivos .md locales, lo que garantiza propiedad total de los datos, exportación trivial y velocidad.",
+              "Editor de notas en texto plano Markdown con propiedad total de los datos y enlaces tipo wiki ([[wikilinks]]) que dibujan un grafo interactivo de relaciones.",
+              "Canvas en espacio infinito, Obsidian Sync (cifrado de extremo a extremo) y Obsidian Publish para publicar notas como wiki/sitio.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de conocimiento",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "Es perfecta para conocimiento personal y de investigación: la técnica del segundo cerebro (Zettelkasten) se apoya en este tipo de herramientas. Cada lección aprendida, referencia o decisión puede convertirse en una nota enlazada que se reutiliza en distintos contextos.",
-              "Su grafo ayuda a descubrir conexiones no evidentes entre temas aparentemente sueltos, algo muy valioso en la investigación y la maduración de ideas.",
+              "Captura el conocimiento en notas locales que se enlazan, formando un grafo editable de decisiones, actas y documentación.",
+              "El PM estructura con tags, links y bases de datos (Dataview) sin perder la propiedad de los datos, y publica como wiki (Obsidian Publish) para difundirlo.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Investigación y síntesis académica o de producto.",
-              "Diario de decisiones (decision log) con enlaces a los documentos que las motivaron.",
-              "Base de conocimiento personal reutilizable por el equipo de trabajos seleccionados.",
-              "Desarrollo de metodologías y plantillas conectadas entre sí.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Datos locales y abiertos: sin vendor lock-in, se puede migrar a cualquier editor Markdown.",
-              "Velocidad y ligereza, incluso con miles de notas.",
-              "Ecosistema enorme de plugins de la comunidad.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "La colaboración en tiempo real es débil fuera de soluciones de sincronización de pago.",
-              "No es una wiki hecho a medida para equipos: carece de permisos nativos por rol.",
-              "El grafo puede convertirse en una telaraña poco útil sin una disciplina de enlaces.",
+              "Notas en Markdown plano, formatos abiertos y sin vendor lock-in.",
+              "Grafos interactivos y vínculos wiki entre notas.",
+              "Miles de plugins: Calendar, Kanban, Dataview, Tasks, Outliner.",
+              "Obsidian Sync con cifrado de extremo a extremo y versionado (1 año).",
+              "Obsidian Publish con dominios y protección por contraseña.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
               "Enlaza todo: una nota sin enlaces es una isla que se pierde.",
-              "Crea una planta MOC (mapa de contenido) superior que organice las notas del área.",
-              "Sincroniza con un repositorio de archivos para tener copia y colaboración.",
+              "Crea un MOC (mapa de contenido) superior que organice las notas del área.",
             ],
           },
         ],
       },
       {
-        slug: "google-workspace",
-        nombre: "Google Workspace (Docs & Drive)",
-        tagline: "Documentación colaborativa en la nube, sin instalar nada.",
+        slug: "dovetail",
+        nombre: "Dovetail",
+        empresa: "Dovetail Research Pty. Ltd.",
+        tagline: "Pregunta, no adivines. La mejor nunca adivina.",
+        tipo: "Plataforma de insights de usuario",
+        enlace: "https://dovetail.com",
+        logo: "/logos/dovetail.png",
+        etiquetas: ["Customer", "Insights", "IA", "Research", "Backlog"],
         resumen:
-          "Google Workspace, con Docs, Drive y Sheets, es la solución de colaboración documental más extendida del mundo. Su edición simultánea, los comentarios y los permisos sencillos la convierten en la puerta de entrada natural al conocimiento de cualquier equipo, especialmente en entornos no técnicos.",
-        tipo: "Suites documental",
-        enlace: "https://workspace.google.com",
-        etiquetas: ["Docs", "Drive", "Colaboración", "Permisos"],
+          "Dovetail es la plataforma de inteligencia de cliente ('Customer Intelligence Platform'): estructura automáticamente entrevistas, llamadas y tickets en conocimiento accionable con evidencia citable. Es clave para convertir feedback en decisiones de producto.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Es el conjunto de herramientas ofimáticas en la nube de Google: documentos, hojas de cálculo, presentaciones, formularios, Drive para almacenamiento y Calendar. Todo con edición en tiempo real y control de versiones automático.",
-              "No existe 'guardar': la herramienta guarda continuamente, y cada cambio queda registrado en el historial de versiones con su autor.",
+              "Motor multimodal con transcripción, traducción, OCR y diarización, que indexa y clasifica automáticamente el feedback en temas, tópicos y sentimiento.",
+              "Digital Twins: réplicas de segmentos de clientes construidas con datos reales para entrevistas simuladas; agentes que detectan y redactan requisitos con evidencia citada.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de conocimiento",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "El conocimiento, en su forma más básica, es un documento compartido: una guía, un acta, un análisis. Google Docs hace esa barrera de entrada mínima: cualquier persona puede crear, editar, comentar y sugerir cambios sin formación previa.",
-              "Los comentarios y las sugerencias permiten revisar de forma transparente, y los permisos (lectura, comentario, edición) controlan quién puede tocar qué.",
+              "Estructura entrevistas, tickets y llamadas en conocimiento de cliente accionable, con evidencia siempre adjunta y citable.",
+              "El PM usa ese contexto para priorizar el backlog con datos reales y transformar insights en documentos de producto (requisitos, resúmenes ejecutivos).",
+              "Los agentes y digital twins difunden el conocimiento del cliente a todo el proyecto.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Documentos de partida y borradores colaborativos en reuniones.",
-              "Matriz de decisiones con Sheets y validaciones.",
-              "Repositorio documental inicial por carpetas compartidas de Drive.",
-              "Formularios de feedback y recogida de conocimiento del equipo.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Barrera de entrada casi nula: todo el mundo sabe usarlo.",
-              "Edición y comentarios en tiempo real impecables.",
-              "Integración total con el ecosistema Google y correo.",
-              "Gratuito para equipos pequeños y escalable de forma simple.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "El conocimiento vive en carpetas, no en una estructura wiki potente (sin relación entre documentos).",
-              "Escasa potencia de búsqueda semántica frente a wikis específicas.",
-              "Los permisos a gran escala pueden convertirse en una maraña de carpetas.",
+              "Motor multimodal: transcripción, traducción, OCR, diarización y redacción de PII automática.",
+              "Indexación automática de feedback en temas, tópicos y sentimiento.",
+              "30+ integraciones (Gong, Salesforce, Qualtrics, Google Play, Figma, Jira, Linear).",
+              "Digital Twins y agentes que priorizan y redactan requisitos con evidencia citada.",
+              "Conector MCP/API/CLI; seguridad SOC 2 Type II, ISO 27001/42001, GDPR e HIPAA.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Crea una estructura de carpetas estándar por proyecto/etapa y documentala.",
-              "Usa siempre 'sugerencias' en documentos a revisar, no edición directa.",
-              "Eleva los documentos clave a una wiki (Notion o Confluence) cuando la estructura de carpetas se quede corta.",
+              "Conecta el repositorio de investigación con Jira para priorizar con evidencia.",
+              "Usa Digital Twins para simular entrevistas antes de invertir en desarrollo.",
             ],
           },
         ],
@@ -563,124 +774,52 @@ export const BLOQUES: Bloque[] = [
   },
   {
     slug: "ejecucion",
-    nombre: "Ejecución",
+    nombre: "Despliegue / Ejecución",
     titulo: "De las ideas claras a los resultados",
     descripcion:
-      "Herramientas para planificar, organizar y hacer seguimiento del trabajo: tableros, sprints, cronogramas y gestión de tareas que convierten los conceptos en entregables medibles.",
+      "Herramientas para planificar, organizar, comunicar y hacer seguimiento del trabajo: tableros, sprints, cronogramas, reuniones, IA y gestión de cartera que convierten los conceptos en entregables medibles.",
     herramientas: [
-      {
-        slug: "jira",
-        nombre: "Jira Software",
-        tagline: "El estándar para la gestión ágil de proyectos de software.",
-        resumen:
-          "Jira Software de Atlassian es la herramienta de ejecución por excelencia en entornos de desarrollo de software y equipos ágiles. Sus tableros de sprint, el backlog y la trazabilidad de incidencias la convierten en el centro de operaciones de miles de equipos de producto y tecnología.",
-        tipo: "Gestión ágil de proyectos",
-        enlace: "https://www.atlassian.com/software/jira",
-        etiquetas: ["Scrum", "Kanban", "Sprints", "Backlog", "Incidencias"],
-        secciones: [
-          {
-            titulo: "Qué es",
-            parrafos: [
-              "Jira Software es un gestor de proyectos y seguimiento de incidencias orientado a metodologías ágiles (Scrum y Kanban). Organiza el trabajo en issues (historias, tareas, bugs) que fluyen por un tablero de columnas y que se agrupan en sprints.",
-              "Aunque nació para software, su flexibilidad de flujos de trabajo la ha llevado también a equipos de negocio, marketing y operaciones.",
-            ],
-          },
-          {
-            titulo: "Cómo encaja en la fase de ejecución",
-            parrafos: [
-              "La ejecución exige tres cosas: un backlog priorizado, sprints con compromiso y visibilidad del progreso. Jira da soporte a las tres: el backlog es el embudo de todo el trabajo por hacer, los sprints en Scrum fijan ciclos de entrega y los tableros muestran el flujo real del trabajo.",
-              "Su densidad de información (burndown, velocidad, diagrama de flujo acumulado) permite a los responsables tomar decisiones basadas en datos, no en impresiones.",
-            ],
-          },
-          {
-            titulo: "Casos de uso",
-            parrafos: [
-              "Equipos Scrum que trabajan por sprints de 2 semanas con backlog refinado.",
-              "Equipos Kanban con flujo continuo (soporte, operaciones).",
-              "Roadmaps de producto conectando épicas e incidencias.",
-              "Informes de seguimiento (burndown, velocidad, CFD) para el comité de proyecto.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Altísima capacidad de personalización de flujos, campos y permisos.",
-              "Ecosistema de integraciones enorme (Slack, CI/CD, Confluence, tiempos).",
-              "Estándar de mercado: plantilla para contratar, pedir y auditar.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "Curva de aprendizaje alta, tanto para usuarios como para administración.",
-              "La configuración abierta puede generar flujos heterogéneos entre equipos.",
-              "Coste por usuario y configuración compleja para equipos pequeños.",
-            ],
-          },
-          {
-            titulo: "Consejos",
-            parrafos: [
-              "Simplifica el flujo: empieza con pocas columnas e issues y añade complejidad solo con necesidad.",
-              "Define una Definition of Done clara para que el tablero refleje la realidad.",
-              "Configura fechas de vencimiento y usa los informes, no el color, para gestionar el riesgo.",
-            ],
-          },
-        ],
-      },
       {
         slug: "trello",
         nombre: "Trello",
-        tagline: "Kanban sencillo que vale para todo.",
-        resumen:
-          "Trello es la herramienta de tableros kanban más simple y reconocible del mercado. Es ideal para equipos y procesos que necesitan ordenar tareas visualmente sin cargar con la complejidad de Jira. Su modelo de listas y tarjetas se entiende en cinco minutos.",
-        tipo: "Tableros kanban",
+        empresa: "Atlassian",
+        tagline: "Captura, organiza y resuelve tus tareas desde cualquier lugar.",
+        tipo: "Kanban / gestión de trabajo visual",
         enlace: "https://trello.com",
-        etiquetas: ["Kanban", "Tarjetas", "Sencillez", "Equipos pequeños"],
+        logo: "/logos/trello.png",
+        etiquetas: ["Kanban", "Tarjetas", "Butler", "MCP", "Sencillez"],
+        resumen:
+          "Trello es la herramienta de tableros kanban más simple y reconocible del mercado: tableros, listas y tarjetas que se entienden en cinco minutos, con automatización Butler e integraciones. Ideal para equipos que necesitan orden visual sin complejidad.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Trello organiza el trabajo en tableros compuestos por listas; dentro de cada lista hay tarjetas que representan tareas. Cada tarjeta puede tener descripción, checklist, fechas, etiquetas de color, comentarios y adjuntos.",
-              "Es la materialización pura de la metodología Kanban: ver todo el trabajo en pila, arrastrarlo de columna y limitar lo que está 'en curso'.",
+              "Tableros kanban con listas y tarjetas (donde cada tarjeta puede tener descripción, checklist, fechas, etiquetas y adjuntos) con la metodología Kanban como base.",
+              "Butler automatiza tareas repetitivas, e Inbox captura correos y Slack directamente en Trello.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ejecución",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "Sirve cuando lo importante es el orden visual y la simplicidad: un tablero de 'por hacer / en curso / hecho' que toda la organización entiende. Brilla en equipos pequeños, procesos transversales y fases donde el coste de la herramienta no debe superar al trabajo que se gestiona.",
+              "Visualiza el avance del trabajo en tiempo real y facilita el seguimiento de tareas y responsables.",
+              "Su automatización y plantillas aceleran la puesta en marcha; ideal para control sencillo y flexible del progreso.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Organización de paneles personales o de pequeño equipo.",
-              "Procesos de onboarding, embudo comercial o gestión de contenidos.",
-              "Seguimiento del lanzamiento de una iniciativa con listas por fase.",
-              "Comité de seguimiento sencillo donde cada tarjeta es una acción con responsable.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Aprendizaje inmediato: el paradigma de las tarjetas es intuitivo para todo el mundo.",
-              "Gratuito para uso básico y amplio catálogo de power-ups (integraciones).",
-              "Responsabilidades y fechas claras dentro de cada tarjeta.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "Poca estructura: un tablero grande se vuelve difícil de manejar sin disciplina.",
-              "Informes y métricas básicas comparados con Jira o ClickUp.",
-              "No está pensada para gestión de dependencias complejas ni roadmaps.",
+              "Método kanban: tableros, listas y tarjetas.",
+              "Automatización integrada Butler para flujos repetitivos.",
+              "Power-Ups e integraciones con cientos de herramientas.",
+              "Inbox y Planner (calendario) con bloques de tiempo.",
+              "Plantillas por equipo y servidor MCP para IA.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
               "Limita el número de tarjetas 'en curso' (WIP) para que el tablero motive terminar.",
-              "Define etiquetas de tipo y prioridad desde el primer día.",
-              "Usa checklists dentro de las tarjetas para tareas compuestas, sin crear micro-tarjetas.",
+              "Usa checklists dentro de las tarjetas para tareas compuestas.",
             ],
           },
         ],
@@ -688,58 +827,134 @@ export const BLOQUES: Bloque[] = [
       {
         slug: "asana",
         nombre: "Asana",
-        tagline: "Gestión de tareas equilibrada entre sencillez y potencia.",
-        resumen:
-          "Asana es una plataforma de gestión de trabajo que se sitúa en un punto medio muy cómodo: más potente que Trello, más sencilla de operar que Jira. Permite ver el trabajo como lista, kanban, calendario, línea de tiempo o cargas de trabajo, todo sobre una misma base de tareas.",
-        tipo: "Gestión de tareas y proyectos",
+        empresa: "Asana, Inc.",
+        tagline: "Gestión de trabajo y proyectos para equipos humano-agente.",
+        tipo: "Gestión de trabajo / gestión de proyectos",
         enlace: "https://asana.com",
-        etiquetas: ["Tareas", "Calendario", "Timeline", "Equipos"],
+        logo: "/logos/asana.png",
+        etiquetas: ["Tareas", "Work Graph", "IA", "Dependencias", "Calendario"],
+        resumen:
+          "Asana es una plataforma de gestión de trabajo con el Asana Work Graph que conecta tareas, proyectos, objetivos y dependencias en vistas múltiples (tablero, lista, calendario, cronograma). Sus agentes de IA anticipan riesgos y monitorizan entregables.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Asana organiza el trabajo en proyectos compuestos por tareas. Cada tarea tiene asignados, fechas, subtareas, dependencias, secciones y campos personalizados. Un mismo trabajo puede visualizarse de múltiples formas sin duplicar datos.",
-              "Ese es su gran acierto: el dato (la tarea) es único y la vista es una interpretación (lista, tablero, calendario, timeline o workloads).",
+              "Plataforma de gestión de trabajo y proyectos con el Work Graph como red de conexiones y una capa de IA (AI Teammates): agentes preconfigurados (Project Manager, Portfolio Advisor, Launch Coordinator) que trabajan dentro de los flujos.",
+              "Memoria compartida: los agentes aprenden de tareas, feedback y preferencias.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ejecución",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "En la ejecución, Asana aporta una visión equilibrada: los equipos de negocio encuentran el orden de Trello pero con fechas y responsables serios, y los equipos técnicos pueden usar dependencias y timeline sin la rigidez de Jira.",
-              "La vista de cargas de trabajo (workloads) permite además detectar a simple vista quién se está saturando, un dato crítico para no romper la ejecución.",
+              "Convierte un brief en un plan de proyecto con tareas y responsables, y detecta bloqueos o tareas en riesgo.",
+              "Sus agentes anticipan riesgos de entrega, monitorizan dependencias y generan retroleos, reduciendo reuniones de estado manuales.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Gestión de proyectos transversales con equipos de distintos departamentos.",
-              "Planificación de campañas y lanzamientos con cronogramas.",
-              "Seguimiento de cargas de trabajo dentro de un equipo.",
-              "Portafolio de iniciativas para dirección de proyecto.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Múltiples vistas sobre la misma base de datos sin duplicar tareas.",
-              "Interfaz pulida y curva de aprendizaje suave.",
-              "Potentes campos personalizados y automatizaciones sencillas.",
-              "Buen equilibro entre precio y funcionalidad.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "Menos personalización profunda de flujos que Jira.",
-              "La estructura de proyectos requiere disciplina para no duplicar tareas entre proyectos.",
+              "Work Graph: red que conecta tareas, proyectos, objetivos y dependencias.",
+              "Vistas múltiples: tablero, lista, calendario y cronograma.",
+              "AI Teammates: agentes Project Manager, Portfolio Advisor y Launch Coordinator.",
+              "Automatización de flujos, hitos y seguimiento de dependencias.",
+              "Gobierno empresarial con permisos y auditoría; '85% del Fortune 100 elige Asana' (dato de la web).",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Usa tareas maestras y subtareas: detalles como subtareas, macro como plan.",
-              "Aprovecha las dependencias en la vista timeline para construir el cronograma de ejecución.",
-              "Revisa la vista de cargas de trabajo una vez por semana.",
+              "Usa dependencias + vista cronograma para construir el plan de ejecución.",
+              "Revisa los agentes AI para que anticipen tareas en riesgo cada semana.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "monday",
+        nombre: "monday.com",
+        empresa: "monday.com Ltd.",
+        tagline: "El espacio de trabajo con IA para personas y agentes.",
+        tipo: "Plataforma integral de gestión de trabajo (Work OS)",
+        enlace: "https://monday.com",
+        logo: "/logos/monday.png",
+        etiquetas: ["Work OS", "Dashboards", "IA", "Automatización", "PMO"],
+        resumen:
+          "monday.com es una plataforma integral (Work OS) con dashboards, docs, formularios y agentes de IA. Es usada por ~60% del Fortune 500 y ofrece productos especializados (work management, CRM, dev, service).",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Plataforma flexible con dashboards, docs (WorkDocs) y formularios (WorkForms), automatizaciones y una suite de IA (Agent Builder, AI Assistant, Notetaker, AI workflows).",
+              "Agentes para PMO: Project Monitor, Risk Analyzer, Meeting Scheduler y Status Reporter.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Ofrece una vista única de proyectos, dependencias, cronogramas y cargas de trabajo en dashboards personalizables.",
+              "Los agentes de PMO monitorizan, avisan de riesgos y generan informes de estado automáticamente, actualizando a los interesados.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Espacio de trabajo flexible con dashboards, docs y formularios.",
+              "Automatizaciones y agentes (Agent Builder, Sidekick, Notetaker).",
+              "Agentes PMO: monitor de proyectos, analista de riesgos, reporter de estado.",
+              "Productos: work management, CRM, dev, service y campaigns.",
+              "Integraciones y monday MCP; ~60% del Fortune 500 lo usa.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Configura un dashboard maestro de proyecto con dependencias y cargas.",
+              "Delega en los agentes PMO la generación semanal de estado.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "jira",
+        nombre: "Jira Software",
+        empresa: "Atlassian",
+        tagline: "Convierte planes en tareas listas para agentes.",
+        tipo: "Gestión ágil / incidencias y gestión de proyectos",
+        enlace: "https://www.atlassian.com/software/jira",
+        logo: "/logos/jira.png",
+        etiquetas: ["Scrum", "Kanban", "Sprints", "Backlog", "Rovo"],
+        resumen:
+          "Jira Software es el estándar de gestión ágil de proyectos de software, con sprints, tableros kanban/scrum y backlog. Su Teamwork Graph y Rovo aportan contexto a los agentes de IA, y el 85% de las empresas del Fortune 500 usan productos Atlassian.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Gestor de proyectos y seguimiento de incidencias orientado a Scrum y Kanban, con issues que fluyen por tableros y sprints.",
+              "Teamwork Graph da contexto a herramientas de IA (MCP y CLI), AI Search responde con realidad y Rovo automatiza y redacta con agentes.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Es la herramienta de referencia para la ejecución ágil de software: planificar sprints, asignar incidencias y seguir el progreso en tiempo real.",
+              "Sus agentes y el grafo de contexto automatizan tareas, redactan actualizaciones y mantienen el trabajo en marcha.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Gestión ágil con sprints, tableros kanban/scrum y backlog.",
+              "Teamwork Graph y MCP/CLI para dar contexto a la IA.",
+              "AI Search y Rovo (agentes de IA que investigan, redactan y actúan).",
+              "Asignación de trabajo a agentes de código (GitHub Copilot, Claude, Cursor).",
+              "Audit trail y control para escalar IA de forma responsable.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Simplifica el flujo e incrementa complejidad solo con necesidad.",
+              "Define una Definition of Done para que el tablero refleje la realidad.",
             ],
           },
         ],
@@ -747,175 +962,675 @@ export const BLOQUES: Bloque[] = [
       {
         slug: "clickup",
         nombre: "ClickUp",
-        tagline: "El 'todo-en-uno' con una potencia imparable.",
-        resumen:
-          "ClickUp es una plataforma de productividad que promete sustituir a casi todas las demás: tareas, documentos, metas, wikis, chats y gestión de tiempo en una única aplicación. Es la opción favorita de equipos que quieren consolidar sus herramientas y cerrar el círculo entre ideación y ejecución.",
-        tipo: "Plataforma integral",
+        empresa: "ClickUp, Inc. (Mango Technologies)",
+        tagline: "Un único espacio de trabajo para pensar y trabajar.",
+        tipo: "Plataforma integral de gestión de trabajo",
         enlace: "https://clickup.com",
-        etiquetas: ["Todo-en-uno", "Tareas", "Docs", "Metas", "Tiempo"],
+        logo: "/logos/clickup.png",
+        etiquetas: ["Todo-en-uno", "Tareas", "Gantt", "IA", "Tiempo"],
+        resumen:
+          "ClickUp es una plataforma todo-en-uno con más de 20 módulos: tareas, chat, calendario, docs, whiteboards, sprints y dashboards. Su IA Brain² genera informes y coordina tareas, y se autodenomina 'software to replace all software'.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "ClickUp organiza todo en espacios, carpetas y listas, y cada vista (lista, tabla, calendario, kanban, gantt) es configurable. Incluye documentos integrados, objetivos (goals), gestión de tiempo, native chats y una librería enorme de plantillas.",
-              "Su ambición es ser la única herramienta de trabajo: de la idea al documento y de la tarea a la métrica, sin cambiar de aplicación.",
+              "Plataforma integral con jerarquías de espacios/carpetas/listas y más de 20 módulos, con vistas múltiples y control de tiempo.",
+              "ClickUp Brain (Brain²) integra IA con agentes, automatizaciones, deep search y generación de informes y presentaciones.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ejecución",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "Para ejecución, ClickUp aporta una potencia de personalización superior: jerarquías 4 niveles (Espacio → Carpeta → Lista → Tarea), vistas Gantt para cronogramas, y un sistema de relaciones y campos que permite modelar procesos complejos.",
-              "Al incluir documentación y objetivos dentro de la misma herramienta, facilita que el conocimiento y la ejecución vivan en el mismo sitio.",
+              "Centraliza en un único espacio la planificación, el seguimiento, el control del tiempo y el reporting, eliminando la fragmentación.",
+              "Sus agentes generan informes, planes de sprint y resúmenes automáticos, coordinando equipos, hitos y recursos.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Equipos que quieren consolidar varias herramientas en una sola.",
-              "Proyectos con cronogramas Gantt sobre una base de tareas enriquecida.",
-              "Gestión de metas y OKRs con sus iniciativas conectadas.",
-              "Seguimiento del tiempo imputado sin herramientas externas.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Todo-en-uno: elimina la fricción de cambiar de herramienta.",
-              "Altísima personalización de vistas, estados y campos.",
-              "Precios agresivos por usuario.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "La sobremultiplicidad de opciones puede abrumar y ralentizar la adopción.",
-              "Rendimiento ocasionalmente pesado en tableros muy grandes.",
-              "Requiere configurar bien desde el inicio para no perderse en jerarquías.",
+              "Más de 20 módulos: tareas, chat, calendario, docs, whiteboards, sprints, dashboards.",
+              "ClickUp Brain/AI: agentes, automatizaciones y generación de informes.",
+              "Time tracking, Gantt y vistas múltiples.",
+              "Automatizaciones y flujos personalizables.",
+              "Integraciones amplias y MCP; planes desde gratuitos.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Empieza con una jerarquía simple de 1-2 niveles antes de explotar la personalización.",
-              "Usa plantillas de vista para que todos en el equipo vean el trabajo con el mismo criterio.",
-              "Configura los automatismos (cambio de estado, notificaciones) nada más montar el espacio.",
+              "Empieza con jerarquía simple (1-2 niveles) antes de explotar la personalización.",
+              "Usa vistas con plantillas para que todo el equipo vea el trabajo con el mismo criterio.",
             ],
           },
         ],
       },
       {
-        slug: "microsoft-project",
-        nombre: "Microsoft Project",
-        tagline: "El clásico del cronograma y la gestión de fechas.",
+        slug: "azure-devops",
+        nombre: "Azure DevOps",
+        empresa: "Microsoft",
+        tagline: "Planifica mejor, colabora mejor y entrega más rápido.",
+        tipo: "DevOps / CI-CD",
+        enlace: "https://azure.microsoft.com/products/devops",
+        logo: "/logos/azure-devops.png",
+        etiquetas: ["Boards", "Pipelines", "Repos", "Test", "DevSecOps"],
         resumen:
-          "Microsoft Project es la herramienta de referencia histórica en planificación de proyectos con enfoque de cascada: cronogramas, dependencias, rutas críticas, recursos y curvas de coste. Sigue siendo el estándar en ingeniería, construcción y grandes proyectos donde la técnica de programación manda.",
-        tipo: "Planificación de proyectos",
-        enlace: "https://www.microsoft.com/en-us/microsoft-365/project/project-management-software",
-        etiquetas: ["Cronograma", "Gantt", "Ruta crítica", "Recursos", "Costes"],
+          "Azure DevOps es la plataforma de desarrollo y entrega continua de Microsoft: Azure Boards (tableros ágiles), Pipelines (CI/CD), Repos, Test Plans y Artifacts. Integra la planificación del proyecto con el código y la calidad.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Microsoft Project es un software de programación de proyectos que modela el plan con tareas, duraciones, dependencias y recursos. Calcula automáticamente fechas, identifica la ruta crítica y permite simular escenarios (qué pasa si un recurso falta o una tarea se retrasa).",
-              "Su núcleo es el diagrama de Gantt y el motor de cálculo de programación, enfocado en el enfoque clásico (tradicional) de dirección de proyectos.",
+              "Conjunto de servicios modernos de desarrollo: Azure Boards para planificar/rastrear trabajo con kanban, Azure Pipelines para CI/CD en cualquier nube, Azure Repos (Git), Azure Test Plans y Azure Artifacts.",
+              "Incluye GitHub Advanced Security y soporte de GitHub Copilot.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ejecución",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "Cuando un proyecto exige compromisos firmes de fecha (contratos, construcción, fabricación), se necesita un motor de scheduling fiable. Project aporta la matemática de la red del proyecto: hoja de cálculo de recursos, ruta crítica, holguras y nivelación de recursos.",
-              "Es la herramienta que da rigor al ciclo de vida en cascada y a disciplinas como la dirección de proyectos con metodología predictiva.",
+              "Permite planificar y seguir el trabajo con tableros ágiles mientras se supervisa la entrega continua y las pruebas.",
+              "Integra planificación, código, pipelines y calidad, ofreciendo visión completa del estado de desarrollo y facilitando el DevSecOps.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Planificación de grandes proyectos de ingeniería, obras y fabricación.",
-              "Modelado de escenarios de retraso para renegociar fechas con evidencia.",
-              "Gestión de recursos humanos y de máquina con nivelación.",
-              "Informes de seguimiento de coste (EV) para dirección.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Motor de programación de ruta crítica muy sólido.",
-              "Cálculo riguroso de dependencias, holguras y costes.",
-              "Profundamente arraigado en el mundo de la construcción y la industria.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "Curva de aprendizaje y configuración elevada.",
-              "Mejor para enfoque predictivo que para equipos ágiles.",
-              "Coste de licencia y ecosistema menos ágil que las SaaS modernas.",
+              "Azure Boards: tableros kanban ágiles y planificación.",
+              "Azure Pipelines: CI/CD para cualquier lenguaje, plataforma y nube.",
+              "Azure Repos: repositorios Git con pull requests.",
+              "Azure Test Plans y Azure Artifacts.",
+              "Managed DevOps Pools para agentes personalizados.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Construye el plan empezando por el trabajo (WBS) y después añade recursos y costes.",
-              "Usa la ruta crítica como objeto de seguimiento semanal, no solo el Gantt.",
-              "Valida las dependencias: un plan con dependencias mal puestas no sirve.",
+              "Aprovecha Azure Boards para el seguimiento y Pipelines para la automatización de QA.",
+              "Conecta repos, pipelines y boards para trazabilidad completa.",
             ],
           },
         ],
       },
       {
-        slug: "smartsheet",
-        nombre: "Smartsheet",
-        tagline: "La hoja de cálculo que se convierte en gestor de proyectos.",
+        slug: "slack",
+        nombre: "Slack",
+        empresa: "Salesforce (Slack Technologies, LLC)",
+        tagline: "Toda tu gente y tus agentes de IA trabajando juntos.",
+        tipo: "Chat / comunicación de equipo",
+        enlace: "https://slack.com",
+        logo: "/logos/slack.png",
+        etiquetas: ["Chat", "Canales", "Huddles", "Slider", "Automatización"],
         resumen:
-          "Smartsheet presenta una rejilla tipo hoja de cálculo que funciona como base de datos y proyecto a la vez. Es la puente perfecta entre equipos que viven de Excel (finanzas, operaciones) y una gestión de proyecto moderna con automatizaciones, vistas Gantt e informes.",
-        tipo: "Hojas de cálculo gestión",
-        enlace: "https://www.smartsheet.com",
-        etiquetas: ["Hoja de cálculo", "Automatización", "Informes", "Corporativo"],
+          "Slack es la plataforma de comunicación y colaboración de equipo de Salesforce. Canales, huddles con notas, Slackbot y automatizaciones la convierten en el canal central para coordinar el equipo durante la ejecución.",
         secciones: [
           {
             titulo: "Qué es",
             parrafos: [
-              "Smartsheet es una plataforma de gestión del trabajo con aspecto de hoja de cálculo. Cada fila es un 'elemento' con campos y estados, y sobre esa rejilla se construyen vistas (Gantt, kanban, calendario), automatizaciones y aprobaciones.",
-              "Al adoptar la sintaxis de las celdas, equipos que piensan en Excel encuentran una transición natural hacia una herramienta de ejecución real.",
+              "Plataforma de chat por canales con Slackbot, huddles (audio/vídeo con notas), Canvas, Lists y clips para gestionar tareas.",
+              "Workflow Builder automatiza tareas (3M+ workflows diarios) y Slack Connect colabora con clientes y proveedores.",
             ],
           },
           {
-            titulo: "Cómo encaja en la fase de ejecución",
+            titulo: "Cómo aporta a la gestión de proyectos",
             parrafos: [
-              "Es ideal para organizaciones donde la cultura de la hoja de cálculo está arraigada: finanzas, operaciones, investigación. Permite pasar del Excel 'que nadie actualiza' a un sistema con estados, responsables, fechas, avisos automáticos e informes enviados.",
-              "Además, su capacidad de cruzar datos de varias estructuras (basado en fórmulas y referencias) la hace muy potente para tableros de control ejecutivos.",
+              "Sirve como canal central donde el PM coordina, comparte actualizaciones de estado y aprueba tareas sin cambiar de herramienta.",
+              "Los canales y huddles mantienen el trabajo en marcha y la búsqueda con IA reduce el tiempo perdido buscando información.",
             ],
           },
           {
-            titulo: "Casos de uso",
+            titulo: "Características principales",
             parrafos: [
-              "Tableros de control de seguimiento de proyectos a dirección.",
-              "Plan de hitos y cronogramas con alertas automáticas de vencimiento.",
-              "Gestión de riesgos y acciones con campos de estado y propietario.",
-              "Automatización de aprobaciones de documentos y procesos.",
-            ],
-          },
-          {
-            titulo: "Ventajas",
-            parrafos: [
-              "Transición natural para equipos de Excel.",
-              "Excelente para informes y consolidación de múltiples proyectos.",
-              "Automatizaciones y aprobaciones potentes con bajo esfuerzo.",
-            ],
-          },
-          {
-            titulo: "Limitaciones",
-            parrafos: [
-              "Filosofía de celdas que puede sentirse rígida para equipos acostumbrados a interfaces de tareas.",
-              "Requiere estructura previa; una rejilla mal definida genera caos.",
+              "Canales por tema/proyecto y Slack Connect con equipos externos.",
+              "Slackbot con IA y búsqueda empresarial.",
+              "Huddles de vídeo/audio con notas automáticas.",
+              "Lists para tareas y Canvas para documentación.",
+              "2.600+ app integraciones y Workflow Builder.",
             ],
           },
           {
             titulo: "Consejos",
             parrafos: [
-              "Define los campos obligatorios (responsable, fecha, estado) antes de cargar datos.",
-              "Usa las vistas inteligentes para que cada perfil vea solo lo suyo.",
-              "Programa informes semanales automáticos a los interesados del proyecto.",
+              "Crea un canal por proyecto con hilos para decisiones clave.",
+              "Automatiza reportes diarios de estado con Workflow Builder.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "lark",
+        nombre: "Lark",
+        empresa: "ByteDance (Lark Technologies)",
+        tagline: "La superapp de productividad para chat, reuniones, documentos y proyectos.",
+        tipo: "Suite colaborativa / superapp",
+        enlace: "https://www.larksuite.com",
+        logo: "/logos/lark.png",
+        etiquetas: ["Messaging", "Videoconferencia", "Docs", "Calendario", "IA"],
+        resumen:
+          "Lark es la superapp de ByteDance que agrupa mensajería, videoconferencia con IA, documentos, bases de datos, calendario y gestión de proyectos en una sola plataforma, reduciendo el cambio entre herramientas durante la ejecución.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Superapp de productividad que integra mensajería, videoconferencia con transcripción y notas de IA, documentos colaborativos, hojas de cálculo, bases de datos y calendario en un solo lugar.",
+              "Incluye formularios, correo, automatización de flujos y traducción con IA.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Agrupa comunicación, reuniones, documentos y seguimiento en una sola plataforma, reduciendo el cambio de contexto.",
+              "Permite coordinar equipos, celebrar reuniones con actas automáticas y mantener un registro documental compartido.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Mensajería integrada y videoconferencia con transcripción/notas IA.",
+              "Docs, hojas de cálculo y bases de datos colaborativas.",
+              "Calendario, formularios, correo y automatización de flujos.",
+              "Traducción y herramientas de IA integradas.",
+              "Gestión de proyectos dentro de la plataforma.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Usa las actas automáticas de reunión para que las decisiones queden registradas.",
+              "Aprovecha la suite para unificar comunicación y documentación del proyecto.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "zoom",
+        nombre: "Zoom Workplace",
+        empresa: "Zoom Communications, Inc.",
+        tagline: "Descubre lo que es posible cuando el trabajo conecta.",
+        tipo: "Videoconferencia / comunicación (UCaaS)",
+        enlace: "https://zoom.us",
+        logo: "/logos/zoom.png",
+        etiquetas: ["Vídeo", "IA", "Meetings", "Webinars", "Whiteboard"],
+        resumen:
+          "Zoom Workplace es la plataforma de comunicación con IA (AI-first): reuniones, chat, teléfono, correo y whiteboard. Su IA toma notas ('My Notes'), resume y extrae elementos de acción, ideal para coordinar equipos distribuidos.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Plataforma UCaaS con reuniones de vídeo, chat, Zoom Phone y correo/calendario, más Zoom Rooms y Webinars/Eventos.",
+              "My Notes toma notas con IA que resume y extrae elementos de acción; ZoomMate genera documentos y siguientes pasos.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Facilita las reuniones de seguimiento en remoto, con IA que toma notas y extrae decisiones y acciones.",
+              "Convierte conversaciones en tareas documentadas sin esfuerzo manual.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Reuniones de vídeo, chat, teléfono y correo/calendario.",
+              "My Notes con IA: resumen y elementos de acción.",
+              "ZoomMate: asistente de IA para documentos y siguientes pasos.",
+              "Whiteboard, Canvas y AI Productivity Suite (Slides, Sheets, Paper).",
+              "Integraciones con Microsoft, Google, Salesforce, Atlassian.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Habilita My Notes en las reuniones de seguimiento del proyecto.",
+              "Usa ZoomMate para convertir el acta en lista de acciones con responsables.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "google-meet",
+        nombre: "Google Meet",
+        empresa: "Google (Google Workspace)",
+        tagline: "Videollamadas mejoradas con IA.",
+        tipo: "Videoconferencia / reuniones",
+        enlace: "https://workspace.google.com/products/meet/",
+        logo: "/logos/google-meet.png",
+        etiquetas: ["Vídeo", "Gemini", "Grabación", "Subtítulos", "Workspace"],
+        resumen:
+          "Google Meet es la herramienta de videoconferencia de Google Workspace, con Gemini en Meet para notas automáticas, traducción en vivo y generación de agendas. Es la opción natural para equipos que viven en el ecosistema Google.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Videollamadas en alta calidad desde cualquier dispositivo o navegador, con grabación, transcripciones, subtítulos en tiempo real y cancelación de ruido.",
+              "Gemini en Meet toma notas automáticamente, traduce en vivo y genera agendas.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Permite celebrar y grabar reuniones de seguimiento con notas y resúmenes automáticos generados por IA (Gemini).",
+              "Captura decisiones y acciones conectándolas con el ecosistema Google, reduciendo el esfuerzo administrativo.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Videollamadas de alta calidad en navegador.",
+              "Gemini en Meet: notas, traducción en vivo y agendas.",
+              "Grabación y transcripciones.",
+              "Subtítulos en tiempo real y cancelación de ruido.",
+              "Integración total con Google Workspace (Calendar, Chat, Drive).",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Programa reuniones desde Calendar con notas activadas para capturar decisiones.",
+              "Revisa las transcripciones y convierte acciones en tareas de la herramienta de gestión.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "microsoft-teams",
+        nombre: "Microsoft Teams",
+        empresa: "Microsoft",
+        tagline: "La plataforma de trabajo con tecnología de IA.",
+        tipo: "Suite colaborativa / comunicación y reuniones (UCaaS)",
+        enlace: "https://www.microsoft.com/en-us/microsoft-teams/",
+        logo: "/logos/microsoft-teams.png",
+        etiquetas: ["Teams", "Copilot", "Reuniones", "Chat", "365"],
+        resumen:
+          "Microsoft Teams es la plataforma de colaboración y reuniones de Microsoft 365, con Copilot y el agente Teams Facilitator que generan notas, tareas y acciones automáticamente. Es la central de trabajo de equipos corporativos.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Chat, canales y reuniones con integración de Microsoft 365 (Loop, OneNote, apps), Teams Phone, Teams Rooms y Microsoft Places.",
+              "Teams Facilitator genera notas, tareas y acciones con IA; Copilot resume y extrae decisiones.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Centraliza comunicación, reuniones y archivos en una sola plataforma.",
+              "Convierte cada reunión en acciones mediante IA (Facilitator y Copilot), ayudando al PM a capturar decisiones y dar seguimiento.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Chat, canales y reuniones de vídeo/audio.",
+              "Teams Facilitator: notas, tareas y acciones con IA.",
+              "Microsoft 365 Copilot para resumir y extraer decisiones.",
+              "Traducción e interpretación en tiempo real.",
+              "Leys Live: webinars y eventos de hasta 100.000 asistentes.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Activa el Facilitator en reuniones de seguimiento para automatizar el acta.",
+              "Usa Loop con Teams para que las acciones de reunión sean editables en doc.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "spinach",
+        nombre: "Spinach.io",
+        empresa: "Spinach (StayIn, Inc.)",
+        tagline: "Captura cada palabra. Tus reuniones en piloto automático.",
+        tipo: "Asistente IA de reuniones",
+        enlace: "https://www.spinach.io",
+        logo: "/logos/spinach.png",
+        etiquetas: ["IA", "Meetings", "Transcripts", "Tickets", "Agenda"],
+        resumen:
+          "Spinach AI es un asistente de reuniones que transcribe, resume y extrae elementos de acción, creando tickets y actualizando automáticamente las herramientas de gestión de proyectos. Garantiza que ninguna decisión se pierda.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Transcripciones y resúmenes precisos en 100 idiomas, integrado con Zoom, Teams, Google Meet y Webex.",
+              "Crea tickets, correos de recapitulación y actualiza el CRM automáticamente, con un 'cerebro centralizado' de IA (analista, asesor y coach).",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Automatiza el registro y seguimiento de reuniones, evitando que se pierdan decisiones y compromisos.",
+              "Crea tickets y actualiza las herramientas de gestión (Jira, Asana, ClickUp, Trello, Monday, Notion) automáticamente.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Transcripción y resúmenes en 100 idiomas.",
+              "Integración con Zoom, Teams, Google Meet, Webex y Slack.",
+              "Creación automática de tickets y actualización de CRM.",
+              "Conexión con Jira, Asana, ClickUp, Trello, Monday, Notion, Salesforce, HubSpot.",
+              "Cumplimiento SOC2, GDPR e HIPAA; datos cifrados y no usados para entrenar modelos.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Conecta Spinach a tu gestor de proyectos para que cada acuerdo se convierta en ticket.",
+              "Revisa el 'cerebro' semanal para detectar compromisos pendientes.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "rovo",
+        nombre: "Atlassian Rovo",
+        empresa: "Atlassian",
+        tagline: "Conoce Rovo: IA que conoce tu negocio.",
+        tipo: "IA empresarial (agentes y búsqueda de conocimiento)",
+        enlace: "https://www.atlassian.com/software/rovo",
+        logo: "/logos/rovo.png",
+        etiquetas: ["IA", "Teamwork Graph", "Agentes", "Búsqueda", "Atlassian"],
+        resumen:
+          "Rovo es la IA empresarial de Atlassian que desbloquea el conocimiento organizativo del ecosistema (Jira, Confluence, código, correo). Su Teamwork Graph conecta conocimiento, personas y decisiones en un grafo que los agentes usan para automatizar el trabajo.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Plataforma de GenAI con Teamwork Graph (grafo que conecta conocimiento, personas y decisiones) y conectores a apps de terceros (Gmail, Google Drive, GitHub, Figma, Miro, Smartsheet).",
+              "Rovo Chat y Search responden con realidad basada en contexto; Rovo Studio permite crear y gestionar agentes.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Da respuestas y contexto de todo el ecosistema de herramientas para tomar decisiones con el panorama completo.",
+              "Sus agentes automatizan tareas repetitivas, redactan informes y mantienen flujos, reduciendo la búsqueda manual de información.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Teamwork Graph: conexión entre conocimiento, personas y decisiones.",
+              "Conectores a Jira, Confluence, Gmail, Google Drive, GitHub, Figma, Miro, Smartsheet.",
+              "Agentes que automatizan flujos y gestionan siguientes pasos.",
+              "Rovo Chat/Search y Rovo Studio para crear agentes.",
+              "Acceso desde apps Atlassian, escritorio, móvil, extensión y CLI; certificaciones SOC2 e ISO 27001.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Crea agentes específicos para generar informes de estado del proyecto.",
+              "Usa Rovo Chat para responder preguntas de contexto corporativo sin búsquedas manuales.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "monday-ai",
+        nombre: "monday AI Workspace",
+        empresa: "monday.com Ltd.",
+        tagline: "El espacio de trabajo con IA para personas y agentes.",
+        tipo: "IA empresarial de gestión de trabajo",
+        enlace: "https://monday.com",
+        logo: "/logos/monday-ai.png",
+        etiquetas: ["IA", "Agentes", "PMO", "Automatización", "Workspace"],
+        resumen:
+          "monday AI Workspace es la capa de IA de monday.com: Agent Builder para crear agentes personalizados, AI Assistant (Sidekick), Notetaker y agentes de IA para PMO que monitorizan proyectos y detectan riesgos.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Suite de IA del Work OS de monday: Agent Builder crea agentes personalizados; AI Assistant, Notetaker y AI workflows operan dentro de los espacios de trabajo.",
+              "Agentes preconfigurados de PMO: Project Monitor, Risk Analyzer, Status Reporter y Meeting Scheduler.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Amplía monday.com con agentes que vigilan el proyecto, detectan riesgos, generan informes de estado y actualizan a los interesados automáticamente.",
+              "El gestor delega seguimiento y reporting repetitivos y se centra en decisiones.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Agent Builder para agentes de IA personalizados.",
+              "AI Assistant (Sidekick), Notetaker y AI workflows.",
+              "Agentes PMO: Project Monitor, Risk Analyzer, Status Reporter, Meeting Scheduler.",
+              "Reporting y generación de informes de estado automatizada.",
+              "Integración con todo el ecosistema monday (work management, dev, CRM, service).",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Crea un agente 'Project Monitor' que reporte el estado semanal del proyecto.",
+              "Programa el Risk Analyzer para avisar de bloqueos antes de que se acumulen.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "clickup-brain",
+        nombre: "ClickUp Brain² / Super Agents",
+        empresa: "ClickUp, Inc.",
+        tagline: "Una IA para reemplazarlas todas. La mejor IA es tu IA.",
+        tipo: "IA empresarial / agentes de IA en gestión de trabajo",
+        enlace: "https://clickup.com/ai",
+        logo: "/logos/clickup-brain.png",
+        etiquetas: ["IA", "Super Agents", "Brain", "Automatización", "Reporting"],
+        resumen:
+          "ClickUp Brain (Brain²) tiene memoria persistente y contexto de todo el workspace, acceso a múltiples modelos (ChatGPT, Claude, Gemini) y Super Agents especializados (Project Manager, Developer, Strategist). Es de las IA más profundas del mercado de gestión.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Brain² con memoria persistente y contexto del workspace, acceso a varios modelos con una suscripción.",
+              "Super Agents: agentes especializados por rol (Project Manager, Developer, Strategist) con skills, AI Fields, AI Automations y AI Notetaker.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Da un asistente con conocimiento de todo el trabajo, capaz de planificar y rebalancear la semana, generar informes de estado y coordinar tareas automáticamente.",
+              "Los Super Agents asumen roles y ejecutan trabajo en paralelo, aumentando la productividad de la ejecución.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Brain² con memoria persistente y contexto del workspace.",
+              "Acceso a múltiples modelos (ChatGPT, Claude, Gemini).",
+              "Super Agents por rol (Project Manager, Developer, Strategist).",
+              "Generación de informes, dashboards, presentaciones y prototipos.",
+              "Seguridad: datos no usados para entrenar modelos (SOC2, ISO 27001, GDPR, HIPAA).",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Usa el Super Agent 'Project Manager' para la planificación semanal.",
+              "Genera informes de estado con Brain² desde los datos del workspace.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "miro-ai",
+        nombre: "Miro AI Workflows",
+        empresa: "Miro",
+        tagline: "La plataforma de IA para el trabajo en equipo.",
+        tipo: "IA colaborativa / canvas inteligente",
+        enlace: "https://miro.com/ai/",
+        logo: "/logos/miro-ai.png",
+        etiquetas: ["IA", "Canvas", "Sidekicks", "Flows", "Agentes"],
+        resumen:
+          "Miro AI (Intelligent Canvas) usa todo el lienzo colaborativo como contexto para la IA: Sidekicks que construyen sobre el trabajo del equipo y Flows (flujos de IA visuales y multipaso) que convierten la colaboración visual en planes y roadmaps.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Intelligent Canvas: el canvas colaborativo usa todo el trabajo como contexto para la IA.",
+              "Sidekicks: agentes que conocen el contexto y construyen sobre el trabajo del equipo; Flows: flujos de trabajo de IA visuales y repetibles como plantillas.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Permite planificar talleres y convertir la colaboración visual en planes, OKRs y dashboards con ayuda de IA.",
+              "Los Sidekicks y Flows automatizan la síntesis de ideas, generan roadmaps y planes de acción desde el canvas.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Intelligent Canvas con contexto del trabajo para IA.",
+              "Sidekicks: agentes que construyen sobre el trabajo del equipo.",
+              "Flows: flujos de IA visuales y multipaso, repetibles como plantillas.",
+              "Conectores con Slack, Jira, Granola y 250+ integraciones.",
+              "AI Playbooks y certificación ISO 42001 (IA).",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Usa Flows para transformar una lluvia de ideas en un roadmap de acción.",
+              "Aprovecha los Sidekicks para sintetizar decisiones de talleres.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "planisware",
+        nombre: "Planisware",
+        empresa: "Planisware (cotiza en bolsa, París)",
+        tagline: "Gestión estratégica de cartera con IA. Cada proyecto, una plataforma.",
+        tipo: "Gestión de cartera de proyectos (PPM/PMO)",
+        enlace: "https://www.planisware.com",
+        logo: "/logos/planisware.png",
+        etiquetas: ["PPM", "PMO", "Cartera", "IA predictiva", "Recursos"],
+        resumen:
+          "Planisware es una plataforma empresarial de gestión de carteras de proyectos (PPM) con IA predictiva, optimización de recursos y capa conversacional (Prisma). Es referencia para PMOs que necesitan seleccionar, priorizar y ejecutar proyectos con visibilidad total.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Suite de soluciones PPM/SPM: Planisware Orchestra (PPM), Luma (PSA), Horizon (IT), Nova (producto), Valoris (CAPEX) y Enterprise.",
+              "Digital Agents automatizan reporting, scheduling y validación; Predictive AI modela resultados, plazos y riesgos (Monte Carlo); Prisma aporta una capa conversacional sobre datos en vivo.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Es una plataforma de nivel empresarial para seleccionar, priorizar y ejecutar proyectos con visibilidad total en la cartera.",
+              "Su IA predictiva y optimización permiten prever resultados, plazos y riesgos y ajustar recursos en la ejecución.",
+              "Centraliza presupuestos, cronogramas y estados para entregar más proyectos a tiempo y dentro del alcance.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Soluciones para PMO, PSA, IT, desarrollo de producto y CAPEX.",
+              "Digital Agents: reporting, scheduling y validación automatizados.",
+              "Predictive AI con modelado Monte Carlo de resultados, plazos y riesgos.",
+              "AI Portfolio Optimization: optimización de recursos y restricciones.",
+              "Planisware Prisma: capa de IA conversacional; reconocido por Gartner, Forrester e IDC.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Usa la IA predictiva en la planificación para simular escenarios de entrega.",
+              "Estructura la cartera por criterios de priorización antes de optimizar recursos.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "prochain",
+        nombre: "ProChain",
+        empresa: "ProChain Solutions, Inc.",
+        tagline: "Entrega proyectos de alto riesgo más rápido y a tiempo.",
+        tipo: "Gestión de proyectos por Critical Chain (CCPM)",
+        enlace: "https://www.prochain.com",
+        logo: "/logos/prochain.png",
+        etiquetas: ["Critical Chain", "CCPM", "Recursos", "Búferes", "Alto riesgo"],
+        resumen:
+          "ProChain (ProChain Fusion) es la herramienta de referencia del método Critical Chain Project Management (CCPM): planifica para lo inesperado y ejecuta con foco y velocidad, mejorando el cumplimiento de plazos en proyectos de alto riesgo.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Software de planificación y ejecución (ProChain Fusion y Fusion Online) basado en la metodología Critical Chain Project Management (CCPM).",
+              "Gestiona la incertidumbre con buffers y prioriza la cadena crítica para cumplir plazos.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Aplica Critical Chain para planificar para lo inesperado y ejecutar con foco y velocidad, mejorando el cumplimiento de plazos.",
+              "Identifica interdependencias y cuellos de botella, centrando al equipo en las tareas críticas y reduciendo el tiempo de ciclo.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Metodología CCPM como base del sistema.",
+              "ProChain Fusion: planificación y ejecución con IA.",
+              "Fusion Online: plataforma en la nube con portal de acceso.",
+              "Planificación de incertidumbre con buffers y cadena crítica.",
+              "Gestión de recursos y análisis de sobrecarga; usado en fármacos, dispositivos médicos y defensa.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Forma al equipo en CCPM antes de desplegar la herramienta.",
+              "Monitoriza el consumo de buffers para anticipar retrasos.",
+            ],
+          },
+        ],
+      },
+      {
+        slug: "github-copilot",
+        nombre: "GitHub Copilot",
+        empresa: "GitHub (Microsoft)",
+        tagline: "Tu agente de IA para escribir, comprender y publicar software.",
+        tipo: "IA de código (agente de desarrollo)",
+        enlace: "https://github.com/features/copilot",
+        logo: "/logos/github-copilot.png",
+        etiquetas: ["IA", "Código", "Agent", "Code review", "Productividad"],
+        resumen:
+          "GitHub Copilot es el agente de IA de código de GitHub que escribe, comprende y publica software en todo el ciclo de vida: completado, generación de código, triage de issues y revisión de PRs. Acelera la fase de ejecución de proyectos de software.",
+        secciones: [
+          {
+            titulo: "Qué es",
+            parrafos: [
+              "Agente de IA que escribe y revisa código, disponible en VS Code, Visual Studio, JetBrains, Xcode, Neovim, CLI, Slack, Teams y móvil.",
+              "Soporta Model Context Protocol (MCP), skills, plugins y conectores, y automatización del triage de issues y revisión de PRs.",
+            ],
+          },
+          {
+            titulo: "Cómo aporta a la gestión de proyectos",
+            parrafos: [
+              "Acelera la ejecución de software automatizando escritura, revisión y pruebas de código, reduciendo el tiempo de desarrollo.",
+              "Permite pasar de issue a pull request con contexto completo, facilitando el seguimiento y reduciendo bloqueos y retrabajos.",
+            ],
+          },
+          {
+            titulo: "Características principales",
+            parrafos: [
+              "Agente de IA que escribe, comprende y publica software.",
+              "Completado y sugerencias de código ilimitadas (planes de pago).",
+              "Agentes de código en la nube (Claude Code, Codex) y elección de modelos.",
+              "Automatización de triage de issues y revisión de PRs.",
+              "Disponible en los editores principales, CLI y herramientas de chat.",
+            ],
+          },
+          {
+            titulo: "Consejos",
+            parrafos: [
+              "Conecta Copilot con el repositorio y las issues para que el equipo desarrolle con contexto completo.",
+              "Automatiza la revisión de PRs para liberar tiempo de ingeniería.",
             ],
           },
         ],
@@ -934,3 +1649,10 @@ export function getHerramienta(
 ): Herramienta | undefined {
   return getBloque(bloqueSlug)?.herramientas.find((h) => h.slug === herramientaSlug);
 }
+
+export const BLOQUE_SLUGS = ["ideacion", "conocimiento", "ejecucion"] as const;
+export const BLOQUE_ALIASES: Record<string, string> = {
+  ideacion: "Ideación / Descubrimiento",
+  conocimiento: "Definición / Conocimiento",
+  ejecucion: "Despliegue / Ejecución",
+};

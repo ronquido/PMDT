@@ -63,10 +63,7 @@ export function AccessGate() {
             </p>
           </div>
 
-          <form
-            onSubmit={handleSubmit}
-            className="rounded-2xl border bg-card p-6 shadow-sm"
-          >
+          <form onSubmit={handleSubmit} className="rounded-2xl border bg-card p-6 shadow-sm">
             <label htmlFor="acceso" className="mb-2 flex items-center gap-2 text-sm font-medium">
               <Lock className="h-4 w-4 text-muted-foreground" />
               Código de acceso

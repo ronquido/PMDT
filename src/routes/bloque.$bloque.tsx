@@ -1,6 +1,6 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import * as React from "react";
-import { ArrowLeft, Folder, ArrowUpRight } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
 import { useAccess } from "@/lib/access-context";
 import { getBloque } from "@/lib/content";
 
@@ -19,7 +19,11 @@ function BloquePage() {
   }, [status, navigate]);
 
   if (status === "loading") {
-    return <div className="mx-auto max-w-6xl px-6 py-24 text-center text-muted-foreground">Cargando…</div>;
+    return (
+      <div className="mx-auto max-w-6xl px-6 py-24 text-center text-muted-foreground">
+        Cargando…
+      </div>
+    );
   }
 
   if (!data) {
@@ -58,8 +62,8 @@ function BloquePage() {
             className="group relative flex flex-col justify-between overflow-hidden rounded-2xl border bg-card p-7 shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
           >
             <div className="flex items-start justify-between">
-              <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-primary/10 text-primary">
-                <Folder className="h-5 w-5" />
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl border bg-white p-1.5 shadow-sm">
+                <img src={h.logo} alt={h.nombre} className="h-full w-full object-contain" />
               </div>
               <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 {String(i + 1).padStart(2, "0")}
@@ -67,6 +71,9 @@ function BloquePage() {
             </div>
             <div className="mt-5">
               <h2 className="text-xl font-semibold tracking-tight">{h.nombre}</h2>
+              <p className="mt-1 text-xs font-medium uppercase tracking-wide text-primary">
+                {h.empresa}
+              </p>
               <p className="mt-2 text-sm text-muted-foreground">{h.tagline}</p>
             </div>
             <div className="mt-5 flex items-center justify-between">

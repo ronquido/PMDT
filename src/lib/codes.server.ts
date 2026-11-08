@@ -5,7 +5,10 @@ const enc = new TextEncoder();
 const SECRET = process.env["PMDT_ACCESS_SECRET"] ?? "pmdt-codigo-cambia-en-produccion";
 
 function b64encode(data: Uint8Array): string {
-  return btoa(String.fromCharCode(...data)).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+  return btoa(String.fromCharCode(...data))
+    .replace(/\+/g, "-")
+    .replace(/\//g, "_")
+    .replace(/=+$/, "");
 }
 
 function b64decode(text: string): Uint8Array {
